@@ -1,0 +1,208 @@
+body{
+    overflow-x: hidden;
+}
+
+
+.header{
+    height: 100px;
+    background-color: #f421a2;
+}
+
+
+.welcome{
+    font-family: 'Parisienne', cursive;
+    font-size: 60px;
+}
+.main{
+    color: #FBACF1;
+    background: linear-gradient(to bottom, #fff 60%, #ffe3f4 100%);
+    margin-top: 80px;
+    padding: 80px;
+}
+.content{
+    padding: 170px;
+}
+.glowelle{
+    color: #f421a2;
+    text-shadow: 1px 1px 5px #f421a2;
+}
+.shopNow{
+    background-color: #f421a2;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+.shopNow:hover{
+    transform: scale(1.05);
+    background-color: #fb82cd;
+}
+@keyframes x {
+  0% { opacity: 0; transform: translateX(-40px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+.first1 {
+  animation: x 1s ease-in-out;
+}
+@keyframes xx {
+  0% { opacity: 0; transform: translateX(40px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+.first2 {
+  animation: xx 1s ease-in-out;
+}
+
+
+.sale {
+    background: linear-gradient(to right, #f421a2 30%, #ffe3f4 100%);
+}
+.sale2{
+    max-width: 600px;
+    margin: auto;
+}
+
+
+.benefits{
+    color: #f421a2;
+}
+.benefits p {
+    color: #696868;
+}
+.icon{
+    transition: transform 0.5s ease;
+}
+.icon:hover {
+    transform: scale(1.1);
+}
+
+
+.explore{
+    background-color: #ffe3f4;
+    padding: 80px;
+}
+.explore h2{
+    color: #f421a2;
+    margin-bottom: 40px;
+    font-family: 'Parisienne', cursive;
+}
+.products h5{
+    color: #f421a2;
+}
+.products{
+    transition: 0.3s ease-in-out;
+    background: linear-gradient(to bottom, #fff 60%, #ffe3f4 100%);
+    max-width: 300px;
+}
+.products:hover {
+    transform: translateY(-15px);
+}
+
+
+.feedback{
+    padding: 80px;
+}
+.feedback h2{
+    color: #f421a2;
+    margin-bottom: 40px;
+    font-family: 'Parisienne', cursive;
+}
+.reviews{
+    transition: 0.3s ease-in-out;
+    border: 2px solid #fba0d2;
+}
+.reviews:hover{    
+    background-color: #ffe3f4; 
+}
+
+
+.subscribe{
+    padding: 80px;
+    background-color: #ffe3f4;
+}
+.subscribe h2{
+    color: #f421a2;
+    font-family: 'Parisienne', cursive;
+}
+.subscribe input{
+    border-color: #f421a2;
+    outline-color: #f421a2;
+}
+.subscribe span{
+    min-height: 50px;
+}
+
+.story{
+    padding: 80px;
+}
+.ourStory {
+    background-color: #ffe3f4;
+    max-width: 600px;
+}
+.story h2{
+    color: #f421a2;
+    font-family: 'Parisienne', cursive;
+}
+
+
+.sustainability {
+    border: 2px solid #f421a2;
+}
+.sustainability2{
+    max-width: 600px;
+    margin: auto;
+}
+.sustainability h2{
+    color: #f421a2;
+    font-family: 'Parisienne', cursive;
+}
+
+
+.faq{
+    padding: 80px;
+    background: linear-gradient(to top, #fff 60%, #ffe3f4 100%);
+}
+.faq h2{
+    color: #f421a2;
+    font-family: 'Parisienne', cursive;
+}
+.Questions1 i{
+    font-size: 60px;
+}
+.Questions1{
+    color: #f421a2;
+    margin-bottom: 40px;
+}
+.QuestionsDiv{
+    background-color: #fff7fb;
+    transition: 0.3s ease-in-out;
+}
+.QuestionsDiv h5{
+    color: #f421a2;
+}
+.QuestionsDiv:hover{
+    transform: translateY(-5px);
+}
+
+.footer{
+    height: 100px;
+    background-color: #f421a2;
+}
+
+
+#backToTop{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+}
+.GoTop {
+  background-color: #f421a2;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+.GoTop:hover {
+  background-color: #f421a2;
+  transform: scale(1.1);
+}
+
+
+
+
