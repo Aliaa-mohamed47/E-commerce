@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 document.addEventListener('DOMContentLoaded', () => {
   const sign_in_btn = document.querySelector("#sign-in-btn-custom");
   const sign_up_btn = document.querySelector("#sign-up-btn-custom");
@@ -249,5 +247,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
->>>>>>> aliaa-auth-pages
 

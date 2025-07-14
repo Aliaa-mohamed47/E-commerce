@@ -16,48 +16,46 @@
     <div class="containerr position-relative w-100 bg-white min-vh-100 overflow-hidden">
       <div class="forms-container position-absolute w-100 h-100 top-0 start-0">
         <div class="signin-signup">
-          <form class="sign-in-form " id="loginForm">
-            <h2 class="title">Sign in</h2>
-            <div class="input-field">
-              <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
+          <form class="sign-in-form d-flex flex-column justify-content-center align-items-center overflow-hidden px-5">
+            <h2 class="title fs-2 text-dark mb-2">Sign in</h2>
+            <div class="input-field d-grid" style="grid-template-columns: 15% 85%; background-color: #f0f0f0; height: 55px; border-radius: 55px; max-width: 380px; width: 100%; margin: 10px 0; padding: 0 0.4rem;">
+              <i class="fas fa-envelope text-center text-secondary fs-6"></i>
+              <input type="email" placeholder="Email" class="bg-transparent border-0 fw-semibold fs-6 text-dark" />
             </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+            <div class="input-field d-grid" style="grid-template-columns: 15% 85%; background-color: #f0f0f0; height: 55px; border-radius: 55px; max-width: 380px; width: 100%; margin: 10px 0; padding: 0 0.4rem;">
+              <i class="fas fa-lock text-center text-secondary fs-6"></i>
+              <input type="password" placeholder="Password" class="bg-transparent border-0 fw-semibold fs-6 text-dark" />
             </div>
             <input type="submit" value="Sign in" class="btn-custom solid" />
-            <div id="loginMessage" class="alert" style="display:none; margin-top:10px;"></div>
-            <p class="forgot-password">
-              <a href="forget-Password.html">Forgot your password?</a>
+            <div id="loginMessage" class="alert mt-2 d-none"></div>
+            <p class="forgot-password mt-2">
+              <a href="forget-Password.html" class="text-decoration-none" style="color:#fe37fc;">Forgot your password?</a>
             </p>
-
           </form>
-          <form class="sign-up-form" id="registerForm">
-            <h2 class="title">Sign up</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" name="name" />
+
+          <form class="sign-up-form d-flex flex-column justify-content-center align-items-center overflow-hidden px-5">
+            <h2 class="title fs-2 text-dark mb-2">Sign up</h2>
+            <div class="input-field d-grid" style="grid-template-columns: 15% 85%; background-color: #f0f0f0; height: 55px; border-radius: 55px; max-width: 380px; width: 100%; margin: 10px 0; padding: 0 0.4rem;">
+              <i class="fas fa-user text-center text-secondary fs-6"></i>
+              <input type="text" placeholder="Username" name="name" class="bg-transparent border-0 fw-semibold fs-6 text-dark" />
             </div>
-            <div class="input-field">
-              <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" name="email" />
+            <div class="input-field d-grid" style="grid-template-columns: 15% 85%; background-color: #f0f0f0; height: 55px; border-radius: 55px; max-width: 380px; width: 100%; margin: 10px 0; padding: 0 0.4rem;">
+              <i class="fas fa-envelope text-center text-secondary fs-6"></i>
+              <input type="email" placeholder="Email" name="email" class="bg-transparent border-0 fw-semibold fs-6 text-dark" />
             </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" name="password" />
+            <div class="input-field d-grid" style="grid-template-columns: 15% 85%; background-color: #f0f0f0; height: 55px; border-radius: 55px; max-width: 380px; width: 100%; margin: 10px 0; padding: 0 0.4rem;">
+              <i class="fas fa-lock text-center text-secondary fs-6"></i>
+              <input type="password" placeholder="Password" name="password" class="bg-transparent border-0 fw-semibold fs-6 text-dark" />
             </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="ConfirmPassword" name="rePassword" />
-            </div>
+            <div class="input-field d-grid" style="grid-template-columns: 15% 85%; background-color: #f0f0f0; height: 55px; border-radius: 55px; max-width: 380px; width: 100%; margin: 10px 0; padding: 0 0.4rem;">
+              <i class="fas fa-lock text-center text-secondary fs-6"></i>
+              <input type="password" placeholder="Confirm Password" name="password" class="bg-transparent border-0 fw-semibold fs-6 text-dark" />
+            </div>            
             <input type="submit" class="btn-custom" value="Sign up" />
-              <div id="registerMessage" class="alert" style="display:none; margin-top:10px;"></div>
+            <div id="registerMessage" class="alert mt-2 d-none"></div>
           </form>
-
         </div>
       </div>
-
       <div class="panels-container">
         <div class="panel left-panel">
           <div class="content">
