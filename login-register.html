@@ -15,67 +15,69 @@
   <body>
     <div class="containerr position-relative w-100 bg-white min-vh-100 overflow-hidden">
       <div class="forms-container position-absolute w-100 h-100 top-0 start-0">
-        <div class="signin-signup">
-          <form class="sign-in-form d-flex flex-column justify-content-center align-items-center overflow-hidden px-5">
+        <div class="signin-signup position-absolute top-50 w-50 d-grid">
+          <form class="sign-in-form d-flex align-items-center justify-content-center flex-column py-0 px-5 overflow-hidden" id="loginForm">
             <h2 class="title fs-2 text-dark mb-2">Sign in</h2>
-            <div class="input-field d-grid" style="grid-template-columns: 15% 85%; background-color: #f0f0f0; height: 55px; border-radius: 55px; max-width: 380px; width: 100%; margin: 10px 0; padding: 0 0.4rem;">
+            <div class="input-field w-100 bg-body-secondary my-2 rounded-pill d-grid px-2 position-relative">
               <i class="fas fa-envelope text-center text-secondary fs-6"></i>
-              <input type="email" placeholder="Email" class="bg-transparent border-0 fw-semibold fs-6 text-dark" />
+              <input class="border-0 lh-1 fw-semibold fs-6 text-body" type="email" placeholder="Email"/>
             </div>
-            <div class="input-field d-grid" style="grid-template-columns: 15% 85%; background-color: #f0f0f0; height: 55px; border-radius: 55px; max-width: 380px; width: 100%; margin: 10px 0; padding: 0 0.4rem;">
+            <div class="input-field w-100 bg-body-secondary my-2 rounded-pill d-grid px-2 position-relative">
               <i class="fas fa-lock text-center text-secondary fs-6"></i>
-              <input type="password" placeholder="Password" class="bg-transparent border-0 fw-semibold fs-6 text-dark" />
+              <input class="border-0 lh-1 fw-semibold fs-6 text-body" type="password" placeholder="Password" />
             </div>
-            <input type="submit" value="Sign in" class="btn-custom solid" />
-            <div id="loginMessage" class="alert mt-2 d-none"></div>
+            <input type="submit" value="Sign in" class="btn-custom border-0 rounded-pill text-white text-uppercase fw-semibold my-2 solid" />
+            <div id="loginMessage" class="alert" style="display:none; margin-top:10px;"></div>
             <p class="forgot-password mt-2">
-              <a href="forget-Password.html" class="text-decoration-none" style="color:#fe37fc;">Forgot your password?</a>
+              <a class="text-decoration-none fs-6" href="forget-Password.html">Forgot your password?</a>
             </p>
+
+          </form>
+          <form class="sign-up-form d-flex align-items-center justify-content-center flex-column py-0 px-5 overflow-hidden" id="registerForm">
+            <h2 class="title fs-2 text-dark mb-2">Sign up</h2>
+            <div class="input-field w-100 bg-body-secondary my-2 rounded-pill d-grid px-2 position-relative">
+              <i class="fas fa-user text-center text-secondary fs-6"></i>
+              <input class="border-0 lh-1 fw-semibold fs-6 text-body" type="text" placeholder="Username" name="name" />
+            </div>
+            <div class="input-field w-100 bg-body-secondary my-2 rounded-pill d-grid px-2 position-relative">
+              <i class="fas fa-envelope text-center text-secondary fs-6"></i>
+              <input class="border-0 lh-1 fw-semibold fs-6 text-body" type="email" placeholder="Email" name="email" />
+            </div>
+            <div class="input-field w-100 bg-body-secondary my-2 rounded-pill d-grid px-2 position-relative">
+              <i class="fas fa-lock text-center text-secondary fs-6"></i>
+              <input class="border-0 lh-1 fw-semibold fs-6 text-body" type="password" placeholder="Password" name="password" />
+            </div>
+            <div class="input-field w-100 bg-body-secondary my-2 rounded-pill d-grid px-2 position-relative">
+              <i class="fas fa-lock text-center text-secondary fs-6"></i>
+              <input class="border-0 lh-1 fw-semibold fs-6 text-body" type="password" placeholder="ConfirmPassword" name="rePassword" />
+            </div>
+            <input type="submit" class="btn-custom border-0 rounded-pill text-white text-uppercase fw-semibold my-2" value="Sign up" />
+              <div id="registerMessage" class="alert" style="display:none; margin-top:10px;"></div>
           </form>
 
-          <form class="sign-up-form d-flex flex-column justify-content-center align-items-center overflow-hidden px-5">
-            <h2 class="title fs-2 text-dark mb-2">Sign up</h2>
-            <div class="input-field d-grid" style="grid-template-columns: 15% 85%; background-color: #f0f0f0; height: 55px; border-radius: 55px; max-width: 380px; width: 100%; margin: 10px 0; padding: 0 0.4rem;">
-              <i class="fas fa-user text-center text-secondary fs-6"></i>
-              <input type="text" placeholder="Username" name="name" class="bg-transparent border-0 fw-semibold fs-6 text-dark" />
-            </div>
-            <div class="input-field d-grid" style="grid-template-columns: 15% 85%; background-color: #f0f0f0; height: 55px; border-radius: 55px; max-width: 380px; width: 100%; margin: 10px 0; padding: 0 0.4rem;">
-              <i class="fas fa-envelope text-center text-secondary fs-6"></i>
-              <input type="email" placeholder="Email" name="email" class="bg-transparent border-0 fw-semibold fs-6 text-dark" />
-            </div>
-            <div class="input-field d-grid" style="grid-template-columns: 15% 85%; background-color: #f0f0f0; height: 55px; border-radius: 55px; max-width: 380px; width: 100%; margin: 10px 0; padding: 0 0.4rem;">
-              <i class="fas fa-lock text-center text-secondary fs-6"></i>
-              <input type="password" placeholder="Password" name="password" class="bg-transparent border-0 fw-semibold fs-6 text-dark" />
-            </div>
-            <div class="input-field d-grid" style="grid-template-columns: 15% 85%; background-color: #f0f0f0; height: 55px; border-radius: 55px; max-width: 380px; width: 100%; margin: 10px 0; padding: 0 0.4rem;">
-              <i class="fas fa-lock text-center text-secondary fs-6"></i>
-              <input type="password" placeholder="Confirm Password" name="password" class="bg-transparent border-0 fw-semibold fs-6 text-dark" />
-            </div>            
-            <input type="submit" class="btn-custom" value="Sign up" />
-            <div id="registerMessage" class="alert mt-2 d-none"></div>
-          </form>
         </div>
       </div>
-      <div class="panels-container">
-        <div class="panel left-panel">
+
+      <div class="panels-container position-absolute h-100 w-100 top-0 start-0 d-grid custom-grid-2-cols">
+        <div class="panel d-flex flex-column align-items-end text-center left-panel">
           <div class="content">
-            <h3>New Here?</h3>
-            <p>
+            <h3 class="fw-semibold lh-1 fs-4">New Here?</h3>
+            <p class="py-2 fs-6">
               Create an account and explore exclusive deals, fresh trends, and your personalized with <span style="color: rgb(248, 4, 223); font-weight: 500; font-style: italic;">Glowelle.</span>
             </p>
-            <button class="btn-custom transparent" id="sign-up-btn-custom">
+            <button class="btn-custom border-0 rounded-pill text-white text-uppercase fw-semibold my-2 transparent m-0 border fw-semibold" id="sign-up-btn-custom">
               Sign up
             </button>
           </div>
           <img src="./images/logoo.png" class="image" alt="" />
         </div>
-        <div class="panel right-panel">
+        <div class="panel d-flex flex-column align-items-end text-center right-panel">
           <div class="content">
-            <h3>welcome back!</h3>
-            <p>
+            <h3 class="fw-semibold lh-1 fs-4">welcome back!</h3>
+            <p class="py-2 fs-6">
               discover your saved picks & keep glowing with <span style="color: rgb(248, 4, 223); font-weight: 500; font-style: italic;">Glowelle.</span>
             </p>
-            <button class="btn-custom transparent" id="sign-in-btn-custom">
+            <button class="btn-custom border-0 rounded-pill text-white text-uppercase fw-semibold my-2 transparent m-0 border fw-semibold" id="sign-in-btn-custom">
               Sign in
             </button>
           </div>
