@@ -97,9 +97,12 @@ document.addEventListener('DOMContentLoaded', () => {
           body: JSON.stringify({ email, password })
         });
         const data = await response.json();
+        console.log(data); // 👈 ضيفي السطر ده هنا
+
         
         if (response.ok) {
           localStorage.setItem('userToken', data.token);
+          localStorage.setItem('userName', data.user.name);
           loginMessageDiv.style.display = 'block';
           loginMessageDiv.className = 'alert alert-success';
           loginMessageDiv.textContent = '✅ Logged in successfully!';
@@ -246,13 +249,5 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-  //logout functionality
-  // const logoutBtn = document.getElementById('logout-btn');
-  // if (logoutBtn) {
-  //   logoutBtn.addEventListener('click', () => {
-  //     localStorage.removeItem('userToken');
-  //     window.location.href = 'login-register.html';
-  //   });
-  // }
 });
 
