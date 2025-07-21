@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/9a3c5c60c8.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" type="image/png" href="./images/logoo.png">
+    <link rel="stylesheet" href="./css/auth.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <title>login | Register</title>
+  </head>
+  <body>
+    <div class="containerr position-relative w-100 bg-white min-vh-100 overflow-hidden">
+      <div class="forms-container position-absolute w-100 h-100 top-0 start-0">
+        <div class="signin-signup position-absolute top-50 w-50 d-grid">
+          <form class="sign-in-form d-flex align-items-center justify-content-center flex-column py-0 px-5 overflow-hidden" id="loginForm">
+            <h2 class="title fs-2 text-dark mb-2">Sign in</h2>
+            <div class="input-field w-100 bg-body-secondary my-2 rounded-pill d-grid px-2 position-relative">
+              <i class="fas fa-envelope text-center text-secondary fs-6"></i>
+              <input class="border-0 lh-1 fw-semibold fs-6 text-body" type="email" placeholder="Email"/>
+            </div>
+            <div class="input-field w-100 bg-body-secondary my-2 rounded-pill d-grid px-2 position-relative">
+              <i class="fas fa-lock text-center text-secondary fs-6"></i>
+              <input class="border-0 lh-1 fw-semibold fs-6 text-body" type="password" placeholder="Password" />
+            </div>
+            <input type="submit" value="Sign in" class="btn-custom border-0 rounded-pill text-white text-uppercase fw-semibold my-2 solid" />
+            <div id="loginMessage" class="alert" style="display:none; margin-top:10px;"></div>
+            <p class="forgot-password mt-2">
+              <a class="text-decoration-none fs-6" href="forget-Password.html">Forgot your password?</a>
+            </p>
+
+          </form>
+          <form class="sign-up-form d-flex align-items-center justify-content-center flex-column py-0 px-5 overflow-hidden" id="registerForm">
+            <h2 class="title fs-2 text-dark mb-2">Sign up</h2>
+            <div class="input-field w-100 bg-body-secondary my-2 rounded-pill d-grid px-2 position-relative">
+              <i class="fas fa-user text-center text-secondary fs-6"></i>
+              <input class="border-0 lh-1 fw-semibold fs-6 text-body" type="text" placeholder="Username" name="name" />
+            </div>
+            <div class="input-field w-100 bg-body-secondary my-2 rounded-pill d-grid px-2 position-relative">
+              <i class="fas fa-envelope text-center text-secondary fs-6"></i>
+              <input class="border-0 lh-1 fw-semibold fs-6 text-body" type="email" placeholder="Email" name="email" />
+            </div>
+            <div class="input-field w-100 bg-body-secondary my-2 rounded-pill d-grid px-2 position-relative">
+              <i class="fas fa-lock text-center text-secondary fs-6"></i>
+              <input class="border-0 lh-1 fw-semibold fs-6 text-body" type="password" placeholder="Password" name="password" />
+            </div>
+            <div class="input-field w-100 bg-body-secondary my-2 rounded-pill d-grid px-2 position-relative">
+              <i class="fas fa-lock text-center text-secondary fs-6"></i>
+              <input class="border-0 lh-1 fw-semibold fs-6 text-body" type="password" placeholder="ConfirmPassword" name="rePassword" />
+            </div>
+            <input type="submit" class="btn-custom border-0 rounded-pill text-white text-uppercase fw-semibold my-2" value="Sign up" />
+              <div id="registerMessage" class="alert" style="display:none; margin-top:10px;"></div>
+          </form>
+
+        </div>
+      </div>
+
+      <div class="panels-container position-absolute h-100 w-100 top-0 start-0 d-grid custom-grid-2-cols">
+        <div class="panel d-flex flex-column align-items-end text-center left-panel">
+          <div class="content">
+            <h3 class="fw-semibold lh-1 fs-4">New Here?</h3>
+            <p class="py-2 fs-6">
+              Create an account and explore exclusive deals, fresh trends, and your personalized with <span style="color: rgb(248, 4, 223); font-weight: 500; font-style: italic;">Glowelle.</span>
+            </p>
+            <button class="btn-custom border-0 rounded-pill text-white text-uppercase fw-semibold my-2 transparent m-0 border fw-semibold" id="sign-up-btn-custom">
+              Sign up
+            </button>
+          </div>
+          <img src="./images/logoo.png" class="image" alt="" />
+        </div>
+        <div class="panel d-flex flex-column align-items-end text-center right-panel">
+          <div class="content">
+            <h3 class="fw-semibold lh-1 fs-4">welcome back!</h3>
+            <p class="py-2 fs-6">
+              discover your saved picks & keep glowing with <span style="color: rgb(248, 4, 223); font-weight: 500; font-style: italic;">Glowelle.</span>
+            </p>
+            <button class="btn-custom border-0 rounded-pill text-white text-uppercase fw-semibold my-2 transparent m-0 border fw-semibold" id="sign-in-btn-custom">
+              Sign in
+            </button>
+          </div>
+          <img src="./images/logoo.png" class="image" alt="" />
+        </div>
+      </div>
+    </div>
+    <script src="./JS/auth.js"></script>
+  </body>
+</html>
