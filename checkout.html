@@ -1,13 +1,45 @@
-<!-- File: checkout.html - Created by Habiba -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Checkout</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/cart-checkout.css">
+  <link rel="icon" type="image/png" href="./images/logoo.png">
+
 </head>
 <body>
-  <!-- Checkout Page -->
-  <script src="js/checkout.js"></script>
+  <div class="container py-5">
+    <h2 class="mb-4 text-center moving-title">Checkout</h2>
+
+    <form id="checkout-form" class="p-4 rounded shadow-sm">
+      <div class="mb-3">
+        <label for="name" class="text-body-secondary form-label">Full Name</label>
+        <input type="text" class="form-control text-secondary" id="name" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="address" class="text-body-secondary form-label">Shipping Address</label>
+        <input type="text" class="form-control text-secondary" id="address" placeholder="Enter your address" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="card" class="text-body-secondary form-label">Card Number</label>
+        <input type="text" class="form-control text-secondary" id="card" placeholder="•••• •••• •••• ••••" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="notes" class="text-body-secondary form-label">Order Notes (Optional)</label>
+        <textarea class="form-control text-secondary" id="notes" rows="3"></textarea>
+      </div>
+
+      <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-primary">Place Order</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="./JS/checkout.js"></script>
 </body>
 </html>

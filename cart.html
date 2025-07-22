@@ -1,13 +1,41 @@
-<!-- File: cart.html - Created by Raghad -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Cart</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/cart-checkout.css">
+  <link rel="icon" type="image/png" href="./images/logoo.png">
+
 </head>
 <body>
-  <!-- Cart Page -->
-  <script src="js/cart.js"></script>
+  <div class="container py-5">
+    <h2 class="mb-4 text-center moving-title">Your Shopping Cart</h2>
+
+    <div class="table-responsive">
+      <table class="table align-middle text-center table-custom-dark">
+        <thead class="table-dark">
+          <tr>
+            <th>Product</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody id="cart-body">
+        </tbody>
+      </table>
+    </div>
+
+    <div class="total-row mt-3 text-end">
+      <h5>Total: <span id="total">0</span> EGP</h5>
+      <a href="checkout.html" class="btn btn-primary mt-2">Go to Checkout</a>
+    </div>
+  </div>
+
+  <script src="./JS/cart.js"></script>
 </body>
 </html>

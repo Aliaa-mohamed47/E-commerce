@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
           messageDiv.className = 'alert alert-success';
           messageDiv.textContent = '✅ Registered successfully!';
           registerForm.reset();
-          setTimeout(() => { window.location.href = "index.html"; }, 1000);
+          setTimeout(() => { window.location.href = "login-register.html"; }, 1000);
         } else {
           let errorMsg = data.message || 'Registration failed';
           if (data.errors) {
@@ -96,15 +96,15 @@ document.addEventListener('DOMContentLoaded', () => {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password })
         });
-
         const data = await response.json();
-
+        
         if (response.ok) {
+          localStorage.setItem('userToken', data.token);
           loginMessageDiv.style.display = 'block';
           loginMessageDiv.className = 'alert alert-success';
           loginMessageDiv.textContent = '✅ Logged in successfully!';
           loginForm.reset();
-          window.location.href = "index.html";
+          setTimeout(() => { window.location.href = "index.html"; }, 1000);
         } else {
           let errorMsg = data.message || 'Login failed';
           loginMessageDiv.style.display = 'block';
@@ -246,5 +246,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+  //logout functionality
+  // const logoutBtn = document.getElementById('logout-btn');
+  // if (logoutBtn) {
+  //   logoutBtn.addEventListener('click', () => {
+  //     localStorage.removeItem('userToken');
+  //     window.location.href = 'login-register.html';
+  //   });
+  // }
 });
 
