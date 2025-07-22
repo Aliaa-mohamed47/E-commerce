@@ -1,0 +1,50 @@
+.custom-navbar {
+  background: linear-gradient(-45deg, #800080 0%, #4b004b 100%);
+  opacity: 1 !important;
+  z-index: 10;
+  position: relative; /* يضمن إنه فوق */
+}
+
+.navbar-brand span {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  position: relative;
+  padding: 8px 12px;
+  transition: color 0.3s;
+}
+
+.username-highlight {
+  color: #ffd700; /* ذهبي باين */
+  font-weight: 600;
+}
+
+.nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  position: relative;
+  padding: 8px 12px;
+  transition: color 0.3s;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  color: #fe37fc !important;
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background-color: #fe37fc;
+  border-radius: 2px;
+}
