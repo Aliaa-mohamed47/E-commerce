@@ -1,8 +1,8 @@
 // File: products.js - Display products - Fatma & Rawan
 
 // go to top btn
-let btn = document.getElementById("backToTop")
-btn.onclick = () => {
+let BackToTop = document.getElementById("backToTop")
+BackToTop.onclick = () => {
     window.scrollTo ({
         top: 0,
         behavior: "smooth",
@@ -10,9 +10,9 @@ btn.onclick = () => {
 }
 window.onscroll = () => {
   if (window.scrollY > 300) {
-    btn.style.display = "block";
+    BackToTop.style.display = "block";
   } else {
-    btn.style.display = "none";
+    BackToTop.style.display = "none";
   }
 };
 
@@ -41,3 +41,30 @@ form.addEventListener("submit", function (e) {
       emailMessage.textContent = "";
     }, 4000);
 });
+
+ 
+
+// --------------------------------------------------------------------------------------------------------------------------------
+// product details
+
+// quantity button
+function increaseValue() {
+  const increase = document.getElementById("quantityInput");
+  increase.value = parseInt(increase.value) + 1;
+}
+
+function decreaseValue() {
+  const decrease = document.getElementById("quantityInput");
+  if (parseInt(decrease.value) > 1) {
+    decrease.value = parseInt(decrease.value) - 1;
+  }
+}
+
+
+// changing product details pictures & border color
+function changeMainImage(clickedImg) {
+  document.getElementById('mainImage').src = clickedImg.src;
+  const x = document.querySelectorAll('.smallImg');
+  x.forEach(div => div.classList.remove('selected'));
+  clickedImg.parentElement.classList.add('selected');
+}

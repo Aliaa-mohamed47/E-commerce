@@ -4,9 +4,125 @@
 <head>
   <meta charset="UTF-8">
   <title>Product Details</title>
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <!-- Single product info -->
+  <div class="header position-fixed top-0 start-0 w-100 z-3">
+
+  </div>
+
+
+  <div class="ProductDetails d-flex flex-row justify-content-around align-items-center gap-5 row">
+    <div class="col-12 col-lg-4 col-sm-12">
+      <div class="productImg rounded-5 shadow-lg mb-4 border border-1 border-secondary-subtle d-flex justify-content-center">
+        <img src="Rawan-images/shaan-make-up-remover.png" class="w-100 h-100" id="mainImage">
+      </div>
+      <div class="d-flex flex-row justify-content-around">
+        <div class="smallImg rounded-4 shadow-lg border border-3 border-secondary-subtle selected">
+          <img src="Rawan-images/shaan-make-up-remover.png" class="w-100 h-100" onclick="changeMainImage(this)">
+        </div>
+        <div class="smallImg rounded-4 shadow-lg border border-3 border-secondary-subtle">
+          <img src="Rawan-images/shaan-makeup-remover-1.png" class="w-100 h-100" onclick="changeMainImage(this)">
+        </div>
+        <div class="smallImg rounded-4 shadow-lg border border-3 border-secondary-subtle">
+          <img src="Rawan-images/shaan-makeup-remover-2.jpg" class="w-100 h-100" onclick="changeMainImage(this)">
+        </div>
+        <div class="smallImg rounded-4 shadow-lg border border-3 border-secondary-subtle">
+          <img src="Rawan-images/shaan-make-up-remover-3.jpg" class="w-100 h-100" onclick="changeMainImage(this)">
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-6 col-sm-12 ">
+      <div class="productInfo rounded-5 shadow-lg p-4 border border-1" >
+        <span class="bg-success badge">Best Seller</span>
+        <h2 class="fw-bold fs-1 ">Shaan Makeup Remover - 200ml</h2>
+        <div class="rating mb-2">
+          <p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i> (210 reviews)</p>
+        </div>
+        <p class="fs-5 fw-semibold text-success" id="discountPrice">EGP 120.00 <span class="text-decoration-line-through text-muted fs-6" id="originalPrice">EGP 150.00 </span><span class="badge bg-danger ms-2">Save 20%</span></p>
+        <hr>
+        <p><strong>Availability:</strong> <span class="text-success">In Stock</span></p>
+        <p><strong>Description:</strong><br> A gentle yet powerful makeup remover that dissolves even waterproof makeup while leaving your skin hydrated and refreshed. Ideal for daily use.</p>
+        <p><strong>Key Ingredients:</strong><br> Aloe Vera, Chamomile Extract, Vitamin E, Rose Water</p>
+        <p><strong>Skin Type:</strong> All skin types</p>
+        <p><strong>Delivery:</strong><br> - Cairo & Giza: 1-2 working days<br> - Other governorates: 2-4 working days</p>
+        <p><i class="fa-solid fa-truck text-success"></i> Free Delivery on orders above EGP 200</p>
+        <p><strong>Return Policy:</strong><br><i class="fa-solid fa-box-open text-success"></i> 14-day return window. Product must be unopened and in original packaging.</p>
+        <div class="quantity">
+          <strong>Quantity:</strong>
+          <div class="input-group mt-2">
+            <button onclick="decreaseValue()" class="border-0 rounded-start-circle p-2 text-white">-</button>
+            <input min="1" value="1" class="text-center fw-bold w-60" id="quantityInput">
+            <button onclick="increaseValue()" class="border-0 rounded-end-circle p-2 text-white">+</button>
+          </div>
+        </div><br>
+        <div class="d-flex flex-row gap-3">
+          <button class="AddToCart border-0 rounded-4 shadow-lg p-2 fs-5 text-white"> <i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+        </div>
+      </div>
+    </div>
+      
+  </div>
+
+
+  <div class="footer w-100">
+    <div class="containerr d-flex flex-row justify-content-around row p-5">
+    <div class="col-12 col-lg-3 col-sm-12">
+      <div class="footerr1">
+        <img src="Rawan-images/logoo with text.png" class="w-100">
+      </div>
+    </div>
+    <div class="col-12 col-lg-3 col-sm-12">
+      <div class="footerr2">
+        <h5 class="fw-bold mb-3">Quick Links</h5>
+        <ul>
+          <li><a href="index.html" class="text-decoration-none">Home</a></li>
+          <li><a href="index.html#shop" class="text-decoration-none">Shop</a></li>
+          <li><a href="index.html#about" class="text-decoration-none">About Us</a></li>
+          <li><a href="index.html#faq" class="text-decoration-none">FAQ</a></li>
+          <li><a href="index.html#reviews" class="text-decoration-none">Reviews</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-12 col-lg-3 col-sm-12">
+      <div class="footerr3 ">
+        <h5 class="fw-bold mb-3">Contact</h5>
+        <p><i class="fa-solid fa-house"></i>  Cairo, Egypt</p>
+        <p><i class="fa-solid fa-envelope"></i>  info@glowelle.com</p>
+        <p><i class="fa-solid fa-phone"></i>  +20 123 456 789</p>
+        <hr>
+        <h5 class="fw-bold mb-4">Follow Us</h5>
+        <div class="social d-flex flex-row gap-3 align-items-center">
+          <i class="fa-brands fa-facebook-f p-2 bg-white rounded-circle border border-1 fs-4"></i>
+          <i class="fa-brands fa-instagram p-2 bg-white rounded-circle border border-1 fs-4"></i>
+          <i class="fa-brands fa-tiktok p-2 bg-white rounded-circle border border-1 fs-4"></i>
+          <i class="fa-brands fa-x-twitter p-2 bg-white rounded-circle border border-1 fs-4"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-3 col-sm-12">
+      <div class="footerr4">
+        <h5 class="fw-bold mb-3">We Accept</h5>
+        <div class="d-flex flex-row justify-content-around align-items-center">
+          <img src="Rawan-images/visaa.png" width="90">
+          <img src="Rawan-images/mastercardd.png" width="70">
+          <img src="Rawan-images/instapay.webp" width="70">
+          <img src="Rawan-images/meeza.png" width="70">
+          <img src="Rawan-images/cashh.png" width="70">
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class=" allRightReserved text-center p-2 text-white small">
+      <b>© 2025 Glowelle. All rights reserved.</b>
+    </div>
+  </div>
+
+
+  <script src="JS/bootstrap.bundle.min.js"></script>
+  <script src="js/products.js"></script>  
 </body>
 </html>

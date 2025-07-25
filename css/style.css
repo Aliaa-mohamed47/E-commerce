@@ -1,38 +1,50 @@
+:root{
+    --mainPadding: 60px;
+    --pink: #f421a2;
+    --lightPink: #ffe3f4;
+    --headingsFont: 'Parisienne', cursive;
+    --bigFont: 60px;
+    --transitionFast: 0.3s ease-in-out;
+    --sectionBackground: linear-gradient(to bottom, #fff 40%, var(--lightPink) 100%);
+    --maxContentWidth: 600px;
+    --hoverScale: scale(1.05);
+}
+
 body{
     overflow-x: hidden;
 }
 
 
 .header{
-    height: 100px;
-    background-color: #f421a2;
+    height: 80px;
+    background-color: var(--pink);
 }
 
 
 .welcome{
-    font-family: 'Parisienne', cursive;
-    font-size: 60px;
+    font-family: var(--headingsFont);
+    font-size: var(--bigFont);
 }
 .main{
     color: #FBACF1;
-    background: linear-gradient(to bottom, #fff 60%, #ffe3f4 100%);
+    background: var(--sectionBackground);
     margin-top: 80px;
-    padding: 80px;
+    padding: var(--mainPadding);
 }
 .content{
     padding: 170px;
 }
 .glowelle{
-    color: #f421a2;
-    text-shadow: 1px 1px 5px #f421a2;
+    color: var(--pink);
+    text-shadow: 1px 1px 5px var(--pink);
 }
 .shopNow{
-    background-color: #f421a2;
+    background-color: var(--pink);
     color: white;
-    transition: 0.3s ease-in-out;
+    transition: var(--transitionFast);
 }
 .shopNow:hover{
-    transform: scale(1.05);
+    transform: var(--hoverScale);
     background-color: #fb82cd;
 }
 @keyframes x {
@@ -52,16 +64,16 @@ body{
 
 
 .sale {
-    background: linear-gradient(to right, #f421a2 30%, #ffe3f4 100%);
+    background: linear-gradient(to right, var(--pink) 30%, var(--lightPink) 100%);
 }
 .sale2{
-    max-width: 600px;
+    max-width: var(--maxContentWidth);
     margin: auto;
 }
 
 
 .benefits{
-    color: #f421a2;
+    color: var(--pink);
 }
 .benefits p {
     color: #696868;
@@ -75,20 +87,20 @@ body{
 
 
 .explore{
-    background-color: #ffe3f4;
-    padding: 80px;
+    background-color: var(--lightPink);
+    padding: var(--mainPadding);
 }
 .explore h2{
-    color: #f421a2;
+    color: var(--pink);
     margin-bottom: 40px;
-    font-family: 'Parisienne', cursive;
+    font-family: var(--headingsFont);
 }
 .products h5{
-    color: #f421a2;
+    color: var(--pink);
 }
 .products{
-    transition: 0.3s ease-in-out;
-    background: linear-gradient(to bottom, #fff 60%, #ffe3f4 100%);
+    transition: var(--transitionFast);
+    background: var(--sectionBackground);
     max-width: 300px;
 }
 .products:hover {
@@ -97,85 +109,85 @@ body{
 
 
 .feedback{
-    padding: 80px;
+    padding: var(--mainPadding);
 }
 .feedback h2{
-    color: #f421a2;
+    color: var(--pink);
     margin-bottom: 40px;
-    font-family: 'Parisienne', cursive;
+    font-family: var(--headingsFont);
 }
 .reviews{
     transition: 0.3s ease-in-out;
     border: 2px solid #fba0d2;
 }
 .reviews:hover{    
-    background-color: #ffe3f4; 
+    background-color: var(--lightPink); 
 }
 
 
 .subscribe{
-    padding: 80px;
-    background-color: #ffe3f4;
+    padding: var(--mainPadding);
+    background-color: var(--lightPink);
 }
 .subscribe h2{
-    color: #f421a2;
-    font-family: 'Parisienne', cursive;
+    color: var(--pink);
+    font-family: var(--headingsFont);
 }
 .subscribe input{
-    border-color: #f421a2;
-    outline-color: #f421a2;
+    border-color: var(--pink);
+    outline-color: var(--pink);
 }
 .subscribe span{
     min-height: 50px;
 }
 
 .story{
-    padding: 80px;
+    padding: var(--mainPadding);
 }
 .ourStory {
-    background-color: #ffe3f4;
-    max-width: 600px;
+    background-color: var(--lightPink);
+    max-width: var(--maxContentWidth);
 }
 .story h2{
-    color: #f421a2;
-    font-family: 'Parisienne', cursive;
+    color: var(--pink);
+    font-family: var(--headingsFont);
 }
 
 
 .sustainability {
-    border: 2px solid #f421a2;
+    border: 2px solid var(--pink);
 }
 .sustainability2{
-    max-width: 600px;
+    max-width: var(--maxContentWidth);
     margin: auto;
 }
 .sustainability h2{
-    color: #f421a2;
-    font-family: 'Parisienne', cursive;
+    color: var(--pink);
+    font-family: var(--headingsFont);
 }
 
 
 .faq{
-    padding: 80px;
-    background: linear-gradient(to top, #fff 60%, #ffe3f4 100%);
+    padding: var(--mainPadding);
+    background: linear-gradient(to top, #fff 60%, var(--lightPink) 100%);
 }
 .faq h2{
-    color: #f421a2;
-    font-family: 'Parisienne', cursive;
+    color: var(--pink);
+    font-family: var(--headingsFont);
 }
 .Questions1 i{
-    font-size: 60px;
+    font-size: var(--bigFont);
 }
 .Questions1{
-    color: #f421a2;
+    color: var(--pink);
     margin-bottom: 40px;
 }
 .QuestionsDiv{
-    background-color: #fff7fb;
-    transition: 0.3s ease-in-out;
+    background-color: var(--lightPink);
+    transition: var(--transitionFast);
 }
 .QuestionsDiv h5{
-    color: #f421a2;
+    color: var(--pink);
 }
 .QuestionsDiv:hover{
     transform: translateY(-5px);
@@ -183,7 +195,7 @@ body{
 
 .footer{
     height: 100px;
-    background-color: #f421a2;
+    background-color: var(--pink);
 }
 
 
@@ -194,15 +206,126 @@ body{
     display: none;
 }
 .GoTop {
-  background-color: #f421a2;
+  background-color: var(--pink);
   color: white;
-  transition: 0.3s ease-in-out;
+  transition: var(--transitionFast);
 }
 .GoTop:hover {
-  background-color: #f421a2;
-  transform: scale(1.1);
+  background-color: var(--pink);
+  transform: var(--hoverScale);
+}
+
+/* -------------------------------------------------------------------------------------------------------------------- */
+/* Product Page Styling */
+.ProductDetails{
+    margin: 80px 0;
+    padding: var(--mainPadding);
+}
+.ProductDetails h2{
+    font-family: var(--headingsFont);
+    color: var(--pink);
+}
+.productImg{
+    overflow: hidden;
+}
+.productImg img{
+    object-fit: cover;
+    max-width: 450px;
+    max-height: 430px;
+}
+.productImg, .smallImg{
+    background: var(--sectionBackground);
+    animation: x 1s ease-in-out;
+}
+@keyframes x {
+  0% { opacity: 0; transform: translateX(-10px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+.productInfo{
+    animation: xx 1s ease-in-out;
+}
+@keyframes xx {
+  0% { opacity: 0; transform: translateX(10px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+.rating i {
+    color: #ffc107;
+    margin-right: 2px;
+}
+.AddToCart{
+    background-color: var(--pink);
+    transition: 0.5s;
+}
+.AddToCart:hover{
+    background-color: #d1178e;
+}
+.AddWishlist{
+    border-color: var(--pink);
+    background-color: var(--lightPink);
+    color: var(--pink);
+    transition: 0.5s;
+}
+.AddWishlist:hover{
+    background-color: #dec4d4;
+}
+.smallImg {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+.smallImg img {
+  object-fit: cover;
+  transition: 0.3s ease-in-out;
+}
+.smallImg img:hover {
+    filter: brightness(80%);
+    transform: scale(1.1);
+}
+.AddToCart:hover {
+    transform: translateY(-2px);
+}
+.quantity button{
+    background-color: var(--pink);
+    transition:  0.3s ease-in-out;
+}
+.quantity input{
+    border-color: var(--pink);
+    color: var(--pink);
+    max-width: 40px;
+}
+.quantity button:hover{
+    background-color: #d1178e;
+}
+.smallImg.selected {
+    border-color: #f421a2 !important;
 }
 
 
-
-
+/* Footer */
+.containerr{
+    background-color: var(--lightPink);
+    color: var(--pink);
+}
+.footerr1 img{
+    max-width: 180px;
+}
+.footerr2 a{
+    color: var(--pink);
+}
+.allRightReserved{
+    background-color: var(--pink);
+}
+.footer a:hover {
+  color: #b01876;
+  text-decoration: underline !important;
+}
+.social i{
+    color: var(--pink);
+    border-color: var(--pink) !important;
+}
+.footerr4 img{
+    transition: 0.3s ease-in-out;
+}
+.footerr4 img:hover {
+    transform: scale(1.1);
+}
