@@ -68,3 +68,4 @@ function changeMainImage(clickedImg) {
   x.forEach(div => div.classList.remove('selected'));
   clickedImg.parentElement.classList.add('selected');
 }
+
