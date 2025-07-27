@@ -1,13 +1,13 @@
 :root{
-    --mainPadding: 60px;
-    --pink: #f421a2;
-    --lightPink: #ffe3f4;
+    --mainPadding: 80px;
+    --main1: #2c558f;
+    --main2: #d9cdbf;
+    --lightBlue: #aec8ed;
     --headingsFont: 'Parisienne', cursive;
     --bigFont: 60px;
     --transitionFast: 0.3s ease-in-out;
-    --sectionBackground: linear-gradient(to bottom, #fff 40%, var(--lightPink) 100%);
+    --sectionBackground: linear-gradient(to bottom, #fff 40%, var(--main2) 100%);
     --maxContentWidth: 600px;
-    --hoverScale: scale(1.05);
 }
 
 body{
@@ -17,7 +17,7 @@ body{
 
 .header{
     height: 80px;
-    background-color: var(--pink);
+    background-color: var(--main1);
 }
 
 
@@ -26,7 +26,7 @@ body{
     font-size: var(--bigFont);
 }
 .main{
-    color: #FBACF1;
+    color: var(--lightBlue);
     background: var(--sectionBackground);
     margin-top: 80px;
     padding: var(--mainPadding);
@@ -35,36 +35,35 @@ body{
     padding: 170px;
 }
 .glowelle{
-    color: var(--pink);
-    text-shadow: 1px 1px 5px var(--pink);
+    color: var(--main1);
+    text-shadow: 1px 1px 5px var(--main1);
 }
 .shopNow{
-    background-color: var(--pink);
-    color: white;
+    background-color: var(--main1);
     transition: var(--transitionFast);
 }
 .shopNow:hover{
-    transform: var(--hoverScale);
-    background-color: #fb82cd;
+    transform: translateY(-3px);
+    background-color: var(--lightBlue);
 }
-@keyframes x {
+@keyframes mainSectionLeft {
   0% { opacity: 0; transform: translateX(-40px); }
   100% { opacity: 1; transform: translateX(0); }
 }
 .first1 {
-  animation: x 1s ease-in-out;
+  animation: mainSectionLeft 1s ease-in-out;
 }
-@keyframes xx {
+@keyframes mainSectionRight {
   0% { opacity: 0; transform: translateX(40px); }
   100% { opacity: 1; transform: translateX(0); }
 }
 .first2 {
-  animation: xx 1s ease-in-out;
+  animation: mainSectionRight 1s ease-in-out;
 }
 
 
 .sale {
-    background: linear-gradient(to right, var(--pink) 30%, var(--lightPink) 100%);
+    background: linear-gradient(to right, var(--main1) 30%, var(--lightBlue) 100%);
 }
 .sale2{
     max-width: var(--maxContentWidth);
@@ -73,7 +72,7 @@ body{
 
 
 .benefits{
-    color: var(--pink);
+    color: var(--main1);
 }
 .benefits p {
     color: #696868;
@@ -87,24 +86,32 @@ body{
 
 
 .explore{
-    background-color: var(--lightPink);
+    background-color: var(--main2);
     padding: var(--mainPadding);
 }
 .explore h2{
-    color: var(--pink);
+    color: var(--main1);
     margin-bottom: 40px;
     font-family: var(--headingsFont);
 }
 .products h5{
-    color: var(--pink);
+    color: var(--main1);
 }
 .products{
     transition: var(--transitionFast);
-    background: var(--sectionBackground);
     max-width: 300px;
+    overflow: hidden;
 }
 .products:hover {
-    transform: translateY(-15px);
+    transform: scale(1.03);
+}
+.viewDetails{
+    background-color: #7796c1;
+    transition: 0.3s ease-in-out;
+}
+.viewDetails:hover{
+    background-color: var(--lightBlue);
+    transform: translateY(-3px);
 }
 
 
@@ -112,30 +119,30 @@ body{
     padding: var(--mainPadding);
 }
 .feedback h2{
-    color: var(--pink);
+    color: var(--main1);
     margin-bottom: 40px;
     font-family: var(--headingsFont);
 }
 .reviews{
     transition: 0.3s ease-in-out;
-    border: 2px solid #fba0d2;
+    border: 2px solid var(--main1);
 }
 .reviews:hover{    
-    background-color: var(--lightPink); 
+    background-color: var(--lightBlue); 
 }
 
 
 .subscribe{
     padding: var(--mainPadding);
-    background-color: var(--lightPink);
+    background-color: var(--main2);
 }
 .subscribe h2{
-    color: var(--pink);
+    color: var(--main1);
     font-family: var(--headingsFont);
 }
 .subscribe input{
-    border-color: var(--pink);
-    outline-color: var(--pink);
+    border-color: var(--main1);
+    outline-color: var(--main1);
 }
 .subscribe span{
     min-height: 50px;
@@ -143,9 +150,10 @@ body{
 
 .story{
     padding: var(--mainPadding);
+    color: var(--main1);
 }
 .ourStory {
-    background-color: var(--lightPink);
+    background-color: var(--main2);
     max-width: var(--maxContentWidth);
 }
 .story h2{
@@ -155,21 +163,22 @@ body{
 
 
 .sustainability {
-    border: 2px solid var(--pink);
+    border: 2px solid var(--main1);
+    background-color: var(--lightBlue);
 }
 .sustainability2{
     max-width: var(--maxContentWidth);
     margin: auto;
 }
 .sustainability h2{
-    color: var(--pink);
+    color: var(--main1);
     font-family: var(--headingsFont);
 }
 
 
 .faq{
     padding: var(--mainPadding);
-    background: linear-gradient(to top, #fff 60%, var(--lightPink) 100%);
+    background: linear-gradient(to top, #fff 60%, var(--lighltPink) 100%);
 }
 .faq h2{
     color: var(--pink);
@@ -179,15 +188,15 @@ body{
     font-size: var(--bigFont);
 }
 .Questions1{
-    color: var(--pink);
+    color: var(--main1);
     margin-bottom: 40px;
 }
 .QuestionsDiv{
-    background-color: var(--lightPink);
+    background-color: var(--main2);
     transition: var(--transitionFast);
 }
 .QuestionsDiv h5{
-    color: var(--pink);
+    color: var(--main1);
 }
 .QuestionsDiv:hover{
     transform: translateY(-5px);
@@ -195,7 +204,7 @@ body{
 
 .footer{
     height: 100px;
-    background-color: var(--pink);
+    background-color: var(--main1);
 }
 
 
@@ -206,24 +215,24 @@ body{
     display: none;
 }
 .GoTop {
-  background-color: var(--pink);
+  background-color: var(--main1);
   color: white;
-  transition: var(--transitionFast);
+  transition: 0.3s ease-in-out;
 }
 .GoTop:hover {
-  background-color: var(--pink);
-  transform: var(--hoverScale);
+  background-color: var(--lightBlue);
+  transform: scale(1.05);
 }
 
-/* -------------------------------------------------------------------------------------------------------------------- */
-/* Product Page Styling */
+/* ------------------------------------------------------------------------------------------------------------------------------ */
+/* Product */
 .ProductDetails{
     margin: 80px 0;
     padding: var(--mainPadding);
 }
 .ProductDetails h2{
     font-family: var(--headingsFont);
-    color: var(--pink);
+    color: var(--main1);
 }
 .productImg{
     overflow: hidden;
@@ -235,16 +244,16 @@ body{
 }
 .productImg, .smallImg{
     background: var(--sectionBackground);
-    animation: x 1s ease-in-out;
+    animation: leftProductDetails 1s ease-in-out;
 }
-@keyframes x {
+@keyframes leftProductDetails {
   0% { opacity: 0; transform: translateX(-10px); }
   100% { opacity: 1; transform: translateX(0); }
 }
 .productInfo{
-    animation: xx 1s ease-in-out;
+    animation: rightProductDetails 1s ease-in-out;
 }
-@keyframes xx {
+@keyframes rightProductDetails {
   0% { opacity: 0; transform: translateX(10px); }
   100% { opacity: 1; transform: translateX(0); }
 }
@@ -253,20 +262,11 @@ body{
     margin-right: 2px;
 }
 .AddToCart{
-    background-color: var(--pink);
+    background-color: var(--main1);
     transition: 0.5s;
 }
 .AddToCart:hover{
-    background-color: #d1178e;
-}
-.AddWishlist{
-    border-color: var(--pink);
-    background-color: var(--lightPink);
-    color: var(--pink);
-    transition: 0.5s;
-}
-.AddWishlist:hover{
-    background-color: #dec4d4;
+    background-color: var(--lightBlue);
 }
 .smallImg {
   width: 100px;
@@ -285,97 +285,49 @@ body{
     transform: translateY(-2px);
 }
 .quantity button{
-    background-color: var(--pink);
+    background-color: var(--main1);
     transition:  0.3s ease-in-out;
 }
 .quantity input{
-    border-color: var(--pink);
-    color: var(--pink);
+    border-color: var(--main1);
+    color: var(--main1);
     max-width: 40px;
 }
 .quantity button:hover{
-    background-color: #d1178e;
+    background-color: var(--lightBlue);
 }
 .smallImg.selected {
-    border-color: #f421a2 !important;
+    border-color: var(--main1) !important;
 }
 
 
+/* ------------------------------------------------------------------------------------------------------------------------------ */
 /* Footer */
 .containerr{
-    background-color: var(--lightPink);
-    color: var(--pink);
+    background-color: var(--main1);
+    color: var(--main2);
 }
-.footerr1 img{
-    max-width: 180px;
+.footerpart1 img{
+    max-width: 250px;
 }
-.footerr2 a{
-    color: var(--pink);
+.footerpart2 a{
+    color: var(--main2);
 }
 .allRightReserved{
-    background-color: var(--pink);
+    background-color: var(--main2);
+    color: var(--main1);
 }
 .footer a:hover {
-  color: #b01876;
+  color: #898a6f;
   text-decoration: underline !important;
 }
 .social i{
-    color: var(--pink);
-    border-color: var(--pink) !important;
+    color: var(--main2);
+    border-color: var(--main2) !important;
 }
-.footerr4 img{
+.footerpart4 img{
     transition: 0.3s ease-in-out;
 }
-.footerr4 img:hover {
+.footerpart4 img:hover {
     transform: scale(1.1);
-=======
-.custom-navbar {
-  background: linear-gradient(-45deg, #800080 0%, #4b004b 100%);
-  opacity: 1 !important;
-  z-index: 10;
-  position: relative; /* يضمن إنه فوق */
-}
-
-.navbar-brand span {
-  color: #fff;
-  font-weight: 600;
-  font-size: 1.2rem;
-}
-
-.nav-link {
-  color: #fff !important;
-  font-weight: 500;
-  position: relative;
-  padding: 8px 12px;
-  transition: color 0.3s;
-}
-
-.username-highlight {
-  color: #ffd700; /* ذهبي باين */
-  font-weight: 600;
-}
-
-.nav-link {
-  color: #fff !important;
-  font-weight: 500;
-  position: relative;
-  padding: 8px 12px;
-  transition: color 0.3s;
-}
-
-.nav-link.active,
-.nav-link:hover {
-  color: #fe37fc !important;
-}
-
-.nav-link.active::after,
-.nav-link:hover::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 10%;
-  width: 80%;
-  height: 2px;
-  background-color: #fe37fc;
-  border-radius: 2px;
 }
