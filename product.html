@@ -10,48 +10,38 @@
 
 </head>
 <body>
-  <div id="header"></div>
+  <!--<div id="header"></div>-->
 
   <!-- Single product info -->
+  
+   <!-- header -->
   <div class="header position-fixed top-0 start-0 w-100 z-3">
 
   </div>
 
-
-  <div class="ProductDetails d-flex flex-row justify-content-around align-items-center gap-5 row">
+  <!-- product -->
+  <!--<div class="ProductDetails d-flex flex-row justify-content-around align-items-center gap-5 row">
     <div class="col-12 col-lg-4 col-sm-12">
       <div class="productImg rounded-5 shadow-lg mb-4 border border-1 border-secondary-subtle d-flex justify-content-center">
-        <img src="Rawan-images/shaan-make-up-remover.png" class="w-100 h-100" id="mainImage">
+        <img src="" class="w-100 h-100" id="mainImage">
       </div>
-      <div class="d-flex flex-row justify-content-around">
-        <div class="smallImg rounded-4 shadow-lg border border-3 border-secondary-subtle selected">
-          <img src="Rawan-images/shaan-make-up-remover.png" class="w-100 h-100" onclick="changeMainImage(this)">
-        </div>
-        <div class="smallImg rounded-4 shadow-lg border border-3 border-secondary-subtle">
-          <img src="Rawan-images/shaan-makeup-remover-1.png" class="w-100 h-100" onclick="changeMainImage(this)">
-        </div>
-        <div class="smallImg rounded-4 shadow-lg border border-3 border-secondary-subtle">
-          <img src="Rawan-images/shaan-makeup-remover-2.jpg" class="w-100 h-100" onclick="changeMainImage(this)">
-        </div>
-        <div class="smallImg rounded-4 shadow-lg border border-3 border-secondary-subtle">
-          <img src="Rawan-images/shaan-make-up-remover-3.jpg" class="w-100 h-100" onclick="changeMainImage(this)">
-        </div>
+      <div class="smallImg d-flex flex-row justify-content-around">
+       
       </div>
     </div>
     <div class="col-12 col-lg-6 col-sm-12 ">
       <div class="productInfo rounded-5 shadow-lg p-4 border border-1" >
-        <span class="bg-success badge">Best Seller</span>
-        <h2 class="fw-bold fs-1 ">Shaan Makeup Remover - 200ml</h2>
+        <span class="bg-success badge"></span>
+        <h2 class=" product-title fw-bold fs-1 "></h2>
         <div class="rating mb-2">
-          <p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i> (210 reviews)</p>
+          <p id="ratingStars"></p>
         </div>
-        <p class="fs-5 fw-semibold text-success" id="discountPrice">EGP 120.00 <span class="text-decoration-line-through text-muted fs-6" id="originalPrice">EGP 150.00 </span><span class="badge bg-danger ms-2">Save 20%</span></p>
+        <p class="fs-5 fw-semibold text-success" id="discountPrice"></p>
         <hr>
-        <p><strong>Availability:</strong> <span class="text-success">In Stock</span></p>
-        <p><strong>Description:</strong><br> A gentle yet powerful makeup remover that dissolves even waterproof makeup while leaving your skin hydrated and refreshed. Ideal for daily use.</p>
-        <p><strong>Key Ingredients:</strong><br> Aloe Vera, Chamomile Extract, Vitamin E, Rose Water</p>
-        <p><strong>Skin Type:</strong> All skin types</p>
-        <p><strong>Delivery:</strong><br> - Cairo & Giza: 1-2 working days<br> - Other governorates: 2-4 working days</p>
+        <p><strong>Availability:</strong> <span class="text-success" id="availabilityStatus"> </span></p>
+        <p><strong>Description</strong><br><span id="productDescription"></span></p>
+        <p><strong>Category:</strong><br><span  id="productCategory"></span></p>
+        <p><strong>Brand:</strong><span id="productBrand"></span></p>
         <p><i class="fa-solid fa-truck text-success"></i> Free Delivery on orders above EGP 200</p>
         <p><strong>Return Policy:</strong><br><i class="fa-solid fa-box-open text-success"></i> 14-day return window. Product must be unopened and in original packaging.</p>
         <div class="quantity">
@@ -68,18 +58,47 @@
       </div>
     </div>
       
+  </div> -->
+
+
+<div class="ProductDetails d-flex flex-row justify-content-around align-items-center gap-5 row my-5">
+  <div class="col-12 col-lg-4 col-sm-12">
+    <div class="productImg rounded-5 shadow-lg mb-4 border border-1 border-secondary-subtle d-flex justify-content-center">
+      <img src="" class="w-100 h-100" id="mainImage" alt="Product Image">
+    </div>
+    <div class="d-flex flex-row justify-content-around small-images-container"></div>
   </div>
+  <div class="col-12 col-lg-6 col-sm-12">
+    <div class="productInfo rounded-5 shadow-lg p-4 border border-1">
+      <h2 class="fw-bold fs-1 product-title">Loading...</h2>
+      <div class="rating mb-2">
+        <p class="product-rating">0 <i class="fa-solid fa-star"></i> (0 reviews)</p>
+      </div>
+      <p class="fs-5 fw-semibold text-success" id="discountPrice">EGP 0.00
+        <span class="text-decoration-line-through text-muted fs-6" id="originalPrice">EGP 0.00</span>
+        <span class="badge bg-danger ms-2 discount-badge" style="display:none">Save</span>
+      </p>
+      <hr>
+      <p class="product-description"><strong>Description:</strong><br> Loading description...</p>
+      <p class="product-category"><strong>Category:</strong> Loading...</p>
+      <p class="product-brand"><strong>Brand:</strong> Modance</p>
+      <!-- ... -->
+    </div>
+  </div>
+</div>
 
 
+
+  <!-- footer -->
   <div class="footer w-100">
     <div class="containerr d-flex flex-row justify-content-around row p-5">
     <div class="col-12 col-lg-3 col-sm-12">
-      <div class="footerr1">
-        <img src="Rawan-images/logoo with text.png" class="w-100">
+      <div class="footerpart1">
+        <img src="Rawan-images/Modance-logo.png" class="w-100">
       </div>
     </div>
     <div class="col-12 col-lg-3 col-sm-12">
-      <div class="footerr2">
+      <div class="footerpart2">
         <h5 class="fw-bold mb-3">Quick Links</h5>
         <ul>
           <li><a href="index.html" class="text-decoration-none">Home</a></li>
@@ -91,7 +110,7 @@
       </div>
     </div>
     <div class="col-12 col-lg-3 col-sm-12">
-      <div class="footerr3 ">
+      <div class="footerpart3 ">
         <h5 class="fw-bold mb-3">Contact</h5>
         <p><i class="fa-solid fa-house"></i>  Cairo, Egypt</p>
         <p><i class="fa-solid fa-envelope"></i>  info@glowelle.com</p>
@@ -107,7 +126,7 @@
       </div>
     </div>
     <div class="col-12 col-lg-3 col-sm-12">
-      <div class="footerr4">
+      <div class="footerpart4">
         <h5 class="fw-bold mb-3">We Accept</h5>
         <div class="d-flex flex-row justify-content-around align-items-center">
           <img src="Rawan-images/visaa.png" width="90">
@@ -126,7 +145,6 @@
 
 
   <script src="JS/bootstrap.bundle.min.js"></script>
-  <script src="js/products.js"></script>  
-   <script src="./JS/utils.js"></script>
+  <script src="js/product.js"></script>  
 </body>
 </html>

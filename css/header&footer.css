@@ -1,34 +1,35 @@
 /* Footer */
 
 :root{
-    --pink: #f421a2;
-    --lightPink: #ffe3f4;
+    --main1: #2c558f;
+    --main2: #d9cdbf;
 }
 
 .containerr{
-    background-color: var(--lightPink);
-    color: var(--pink);
+    background-color: var(--main1);
+    color: var(--main2);
 }
-.footerr1 img{
-    max-width: 180px;
+.footerpart1 img{
+    max-width: 250px;
 }
-.footerr2 a{
-    color: var(--pink);
+.footerpart2 a{
+    color: var(--main2);
 }
 .allRightReserved{
-    background-color: var(--pink);
+    background-color: var(--main2);
+    color: var(--main1);
 }
 .footer a:hover {
-  color: #b01876;
+  color: #898a6f;
   text-decoration: underline !important;
 }
 .social i{
-    color: var(--pink);
-    border-color: var(--pink) !important;
+    color: var(--main2);
+    border-color: var(--main2) !important;
 }
-.footerr4 img{
+.footerpart4 img{
     transition: 0.3s ease-in-out;
 }
-.footerr4 img:hover {
+.footerpart4 img:hover {
     transform: scale(1.1);
 }
