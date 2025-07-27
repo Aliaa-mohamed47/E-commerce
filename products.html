@@ -6,17 +6,44 @@
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Black+Han+Sans&family=Exo:ital,wght@0,100..900;1,100..900&family=Playwrite+BE+WAL+Guides&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="header"></div>
 
-  <div id="products-container">
-    <!-- Products will be shown here -->
+<h1 class="c1">WELCOME TO MODANCE</h1>
+<h1 class="f30"> 👗🕴️ Fashion for every story 👗🕴️ </h1>
+
+<div id="loading" class="text-center my-5">
+  <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
   </div>
-  <script src="./JS/bootstrap.bundle.min.js"></script>
-  <script src="js/products.js"></script>
-  <script src="./JS/utils.js"></script>
+  <p>Loading products...</p>
+</div>
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0 f2 ps-5 mt-5" id="category-nav">
+      <li class="nav-item">
+        <a class="nav-link filter-link active border-bottom border-dark border-3 " data-filter="all" href="#">All</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link filter-link a1" data-filter="women" href="#">Women</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link filter-link a1" data-filter="men" href="#">Men</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container text-center f50 shadow-lg p-3 mb-5 bg-body-tertiary rounded bg-white">
+  <div class="row" id="products-row"></div>
+</div>
+
+<script src="js/js.js"></script>
+<script src="./js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
