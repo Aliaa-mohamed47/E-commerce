@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(-45deg, #fcd6f6 0%, #f6a4e3 100%);
+    min-height: 100vh;
+    color: #555;
+}
+
+h2 {
+    color: #9b4ca0;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.quantity-input {
+    width: 100px;
+    text-align: center;
+}
+
+.table-dark th {
+    background-color: #9b4ca0;
+    color: #fff;
+}
+
+.table-custom-dark {
+    background-color: #b86cc0;
+    color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.table-custom-dark tbody tr:hover {
+    background-color: rgba(233,123,249,0.1);
+}
+
+.table-custom-dark td, 
+.table-custom-dark th {
+    border-right: 1px solid #fe37fc;
+}
+
+.table-custom-dark td:last-child, 
+.table-custom-dark th:last-child {
+    border-right: none;
+}
+
+.total-row {
+    margin-top: 20px;
+    text-align: end;
+}
+
+#cart-total {
+    color: #9b4ca0;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background-color: #e97bf9;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #c96cd2;
+}
+
+.moving-title span {
+    display: inline-block;
+    animation: wave 1.5s infinite;
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+#checkout-form {
+    max-width: 600px;
+    margin: auto;
+    background-color: #f7d1ef;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+}
