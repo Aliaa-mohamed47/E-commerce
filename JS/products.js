@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loading.style.display = "block";
 
-  // نجيب كلمة السيرش من URL (إن وجدت)
   const params = new URLSearchParams(window.location.search);
   const keyword = params.get('search')?.toLowerCase();
 
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(data => {
       products = data.data.filter(prod => prod.category?.name !== 'Electronics');
 
-      // لو فيه keyword → فلترة المنتجات
       if (keyword) {
         products = products.filter(prod =>
           prod.title.toLowerCase().includes(keyword)
@@ -29,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
       cards.forEach(card => container.appendChild(card));
       initCardEvents(products);
 
-      // (اختياري) لو فيه keyword، نظهر رسالة في الأعلى
       if (keyword) {
         const msg = document.createElement('p');
         msg.className = "text-center mt-3 fs-5";
