@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cards = products.map(prod => createProductCard(prod));
 
       cards.forEach(card => container.appendChild(card));
-      initCardEvents(products);
+      initCardEvents();
 
       if (keyword) {
         const msg = document.createElement('p');
@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const col = document.createElement("div");
     col.className = "col-md-4 mb-4 product-card";
     col.dataset.category = prod.category?.name?.toLowerCase().includes('women') ? 'women' : 'men';
+    col.dataset.productId = prod.id; // ✅ أضفنا id هنا
 
     col.innerHTML = `
       <div class="card h-100 shadow-sm f60">
@@ -65,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return col;
   }
 
-
   document.querySelectorAll('.filter-link').forEach(link => {
     link.addEventListener('click', () => {
       document.querySelectorAll('.filter-link').forEach(l => l.classList.remove('active'));
@@ -83,20 +83,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
       filtered.forEach(card => container.appendChild(card));
 
-      const filteredProducts = products.filter(prod =>
-        filter === 'all' ? true :
-        filter === 'women' ? prod.category?.name?.toLowerCase().includes('women') :
-        prod.category?.name?.toLowerCase().includes('men')
-      );
-      initCardEvents(filteredProducts);
+      initCardEvents(); // ✅ هنا بقى مش محتاجين نبعث prods، هنا بناخد من dataset
     });
   });
 
-  function initCardEvents(prods) {
+  function initCardEvents() {
     const cardsOnPage = document.querySelectorAll('.product-card');
-    cardsOnPage.forEach((card, idx) => {
+    cardsOnPage.forEach((card) => {
       let count = 0;
-      const product = prods[idx];
+      const productId = card.dataset.productId; // ✅ جبنا id من dataset
       const plusBtn = card.querySelector('.plus');
       const minusBtn = card.querySelector('.minus');
       const countSpan = card.querySelector('.count');
@@ -138,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
               token
             },
             body: JSON.stringify({
-              productId: product.id,
+              productId: productId, // ✅ هنا id مباشر
               count: count
             })
           });
@@ -157,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       detailsBtn.onclick = () => {
-        window.location.href =`product.html?id=${product.id}`;
+        window.location.href = `product.html?id=${productId}`;
       };
     });
   }

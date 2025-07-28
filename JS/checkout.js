@@ -5,25 +5,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     return;
   }
 
-  const title = document.querySelector(".moving-title");
-  const text = title.textContent;
-  title.textContent = "";
-  [...text].forEach((char, i) => {
-    const span = document.createElement("span");
-    span.textContent = char;
-    if (char !== " ") {
-      span.style.animationDelay = `${i * 0.1}s`;
-    } else {
-      span.style.display = "inline";
-    }
-    title.appendChild(span);
-  });
-
   let cartId = null;
   try {
-    const res = await fetch('https://ecommerce.routemisr.com/api/v1/cart', {
-      headers: { token }
-    });
+    const res = await fetch('https://ecommerce.routemisr.com/api/v1/cart', { headers: { token } });
     const data = await res.json();
     cartId = data.data._id;
   } catch (error) {
@@ -49,32 +33,71 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
+    const customerName = document.getElementById('name').value;
     const address = document.getElementById('address').value;
 
     spinner.classList.remove('d-none');
     showMessage('', '');
 
     try {
+      // fetch cart data
+      const cartRes = await fetch('https://ecommerce.routemisr.com/api/v1/cart', { headers: { token } });
+      const cartData = await cartRes.json();
+      const cart = cartData.data;
+
+      if (!cart || !cart.products || cart.products.length === 0) {
+        showMessage('❌ Your cart is empty!', 'danger');
+        spinner.classList.add('d-none');
+        return;
+      }
+
+      // place order
       const res = await fetch(`https://ecommerce.routemisr.com/api/v1/orders/${cartId}`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          token
-        },
+        headers: { 'Content-Type': 'application/json', token },
         body: JSON.stringify({
-          shippingAddress: {
-            details: address,
-            phone: "01000000000",
-            city: "Cairo"
-          }
+          shippingAddress: { details: address, phone: "01000000000", city: "Cairo" }
         })
       });
-
       const result = await res.json();
 
       if (res.ok) {
         showMessage('✅ Order placed successfully!', 'success');
         form.reset();
+
+        // generate order number
+        let lastOrderNumber = parseInt(localStorage.getItem('lastOrderNumber')) || 0;
+        let newOrderNumber = lastOrderNumber + 1;
+        localStorage.setItem('lastOrderNumber', newOrderNumber);
+
+        // create new order object
+        const newOrder = {
+          id: newOrderNumber,
+          customerName: customerName,
+          userToken: token,  // لربطه باليوزر
+          date: new Date().toLocaleString(),
+          total: cart.totalCartPrice,
+          status: 'Pending',
+          address: address,
+          products: cart.products.map(p => ({
+            id: p.product.id,
+            title: p.product.title,
+            price: p.price,
+            count: p.count,
+            image: p.product.imageCover
+          }))
+        };
+
+        let userName = localStorage.getItem('userName'); // 👈 أو ممكن email لو مسجلاه
+        let ordersKey = `orders_${userName}`;
+
+        let orders = JSON.parse(localStorage.getItem(ordersKey)) || [];
+        orders.push(newOrder);
+        localStorage.setItem(ordersKey, JSON.stringify(orders));
+
+
+        // ممكن تعملي تحويل لصفحة الطلبات
+        // window.location.href = 'orders.html';
       } else {
         showMessage('❌ Failed: ' + result.message, 'danger');
       }

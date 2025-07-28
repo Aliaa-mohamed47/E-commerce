@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 function buildNavLinks() {
   const navCenter = document.getElementById('nav-center-links');
   const navRight = document.getElementById('nav-right-links');
-  const userName = localStorage.getItem('userName');
+  const userName = localStorage.getItem('userName') || '';
+  const firstName = userName.split(' ')[0];
   const currentPage = window.location.pathname.split('/').pop();
 
   let centerLinks = `
@@ -31,6 +32,11 @@ function buildNavLinks() {
       </a>
     </li>
     <li class="nav-item mx-3">
+      <a class="nav-link ${currentPage === 'orders.html' ? 'active' : ''}" href="orders.html">
+        <i class="fas fa-shopping-cart"></i> View Orders
+      </a>
+    </li>
+    <li class="nav-item mx-3">
       <form class="d-flex" role="search" id="searchForm">
         <input class="form-control form-control-sm me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput">
         <button class="btn btn-outline-secondary btn-sm" type="submit"><i class="fas fa-search"></i></button>
@@ -43,7 +49,7 @@ function buildNavLinks() {
     rightLinks += `
       <li class="nav-item mx-2">
         <span class="nav-link">
-          Hello, <span class="username-highlight">${userName}</span>
+          Hello, <span class="username-highlight">${firstName}</span>
         </span>
       </li>
       <li class="nav-item mx-2">
