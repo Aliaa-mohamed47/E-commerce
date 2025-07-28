@@ -9,11 +9,12 @@
     background-color: var(--main1);
     color: var(--main2);
 }
+.footerpart2 a {
+    color: var(--main2) !important;
+}
+
 .footerpart1 img{
     max-width: 250px;
-}
-.footerpart2 a{
-    color: var(--main2);
 }
 .allRightReserved{
     background-color: var(--main2);
@@ -80,4 +81,17 @@
   height: 2px;
   background-color: #aec8ed;
   border-radius: 2px;
+}
+
+.footerpart2 a,
+.footerpart2 a:link,
+.footerpart2 a:visited,
+.footerpart2 a:hover,
+.footerpart2 a:active,
+.no-bullets a,
+.no-bullets a:link,
+.no-bullets a:visited,
+.no-bullets a:hover,
+.no-bullets a:active {
+    color: var(--main2) !important;
 }
