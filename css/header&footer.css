@@ -33,3 +33,51 @@
 .footerpart4 img:hover {
     transform: scale(1.1);
 }
+
+/* header */
+.custom-navbar {
+  background: var(--main1);
+  opacity: 1 !important;
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-brand span {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.username-highlight {
+  color: #ffd700;
+  font-weight: 600;
+}
+
+.nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  position: relative;
+  padding: 8px 12px;
+  transition: color 0.3s;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  color: #aec8ed !important;
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background-color: #aec8ed;
+  border-radius: 2px;
+}

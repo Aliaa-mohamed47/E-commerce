@@ -3,48 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <title>Product Details</title>
-  <link rel="stylesheet" href="css/all.min.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-
-  <link rel="stylesheet" href="css/style.css">
-
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="./images/logoo.png">
+  <link rel="stylesheet" href="./css/header&footer.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <!--<div id="header"></div>-->
+  <div id="header"></div>
 
-  <!-- Single product info -->
-  
-   <!-- header -->
-  <div class="header position-fixed top-0 start-0 w-100 z-3">
-
-  </div>
-
-  <!-- product -->
-  <!--<div class="ProductDetails d-flex flex-row justify-content-around align-items-center gap-5 row">
+  <div class="ProductDetails d-flex flex-row justify-content-around align-items-center gap-5 row my-5">
     <div class="col-12 col-lg-4 col-sm-12">
       <div class="productImg rounded-5 shadow-lg mb-4 border border-1 border-secondary-subtle d-flex justify-content-center">
-        <img src="" class="w-100 h-100" id="mainImage">
+        <img src="" class="mainImage" id="mainImage" alt="Product Image">
       </div>
-      <div class="smallImg d-flex flex-row justify-content-around">
-       
-      </div>
+      <div class="d-flex flex-row justify-content-around small-images-container"></div>
     </div>
-    <div class="col-12 col-lg-6 col-sm-12 ">
-      <div class="productInfo rounded-5 shadow-lg p-4 border border-1" >
-        <span class="bg-success badge"></span>
-        <h2 class=" product-title fw-bold fs-1 "></h2>
+    <div class="col-12 col-lg-6 col-sm-12">
+      <div class="productInfo rounded-5 shadow-lg p-4 border border-1">
+        <h2 class="fw-bold fs-1 product-title">Loading...</h2>
         <div class="rating mb-2">
-          <p id="ratingStars"></p>
+          <p class="product-rating">0 <i class="fa-solid fa-star"></i> (0 reviews)</p>
         </div>
-        <p class="fs-5 fw-semibold text-success" id="discountPrice"></p>
+        <p class="fs-5 fw-semibold text-success" id="discountPrice">EGP 0.00
+          <span class="text-decoration-line-through text-muted fs-6" id="originalPrice" style="display:none">EGP 0.00</span>
+          <span class="badge bg-danger ms-2 discount-badge" style="display:none">Save</span>
+        </p>
         <hr>
-        <p><strong>Availability:</strong> <span class="text-success" id="availabilityStatus"> </span></p>
-        <p><strong>Description</strong><br><span id="productDescription"></span></p>
-        <p><strong>Category:</strong><br><span  id="productCategory"></span></p>
-        <p><strong>Brand:</strong><span id="productBrand"></span></p>
-        <p><i class="fa-solid fa-truck text-success"></i> Free Delivery on orders above EGP 200</p>
-        <p><strong>Return Policy:</strong><br><i class="fa-solid fa-box-open text-success"></i> 14-day return window. Product must be unopened and in original packaging.</p>
-        <div class="quantity">
+        <p class="product-description"><strong>Description:</strong><br> Loading description...</p>
+        <p class="product-category"><strong>Category:</strong> Loading...</p>
+        <p class="product-brand"><strong>Brand:</strong> Modance</p>
+        <div class="quantity mt-3">
           <strong>Quantity:</strong>
           <div class="input-group mt-2">
             <button onclick="decreaseValue()" class="border-0 rounded-start-circle p-2 text-white">-</button>
@@ -53,98 +42,21 @@
           </div>
         </div><br>
         <div class="d-flex flex-row gap-3">
-          <button class="AddToCart border-0 rounded-4 shadow-lg p-2 fs-5 text-white"> <i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+          <button class="AddToCart border-0 rounded-4 shadow-lg p-2 fs-5 text-white">
+            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+          </button>
         </div>
       </div>
     </div>
-      
-  </div> -->
-
-
-<div class="ProductDetails d-flex flex-row justify-content-around align-items-center gap-5 row my-5">
-  <div class="col-12 col-lg-4 col-sm-12">
-    <div class="productImg rounded-5 shadow-lg mb-4 border border-1 border-secondary-subtle d-flex justify-content-center">
-      <img src="" class="w-100 h-100" id="mainImage" alt="Product Image">
-    </div>
-    <div class="d-flex flex-row justify-content-around small-images-container"></div>
-  </div>
-  <div class="col-12 col-lg-6 col-sm-12">
-    <div class="productInfo rounded-5 shadow-lg p-4 border border-1">
-      <h2 class="fw-bold fs-1 product-title">Loading...</h2>
-      <div class="rating mb-2">
-        <p class="product-rating">0 <i class="fa-solid fa-star"></i> (0 reviews)</p>
-      </div>
-      <p class="fs-5 fw-semibold text-success" id="discountPrice">EGP 0.00
-        <span class="text-decoration-line-through text-muted fs-6" id="originalPrice">EGP 0.00</span>
-        <span class="badge bg-danger ms-2 discount-badge" style="display:none">Save</span>
-      </p>
-      <hr>
-      <p class="product-description"><strong>Description:</strong><br> Loading description...</p>
-      <p class="product-category"><strong>Category:</strong> Loading...</p>
-      <p class="product-brand"><strong>Brand:</strong> Modance</p>
-      <!-- ... -->
-    </div>
-  </div>
-</div>
-
-
-
-  <!-- footer -->
-  <div class="footer w-100">
-    <div class="containerr d-flex flex-row justify-content-around row p-5">
-    <div class="col-12 col-lg-3 col-sm-12">
-      <div class="footerpart1">
-        <img src="Rawan-images/Modance-logo.png" class="w-100">
-      </div>
-    </div>
-    <div class="col-12 col-lg-3 col-sm-12">
-      <div class="footerpart2">
-        <h5 class="fw-bold mb-3">Quick Links</h5>
-        <ul>
-          <li><a href="index.html" class="text-decoration-none">Home</a></li>
-          <li><a href="index.html#shop" class="text-decoration-none">Shop</a></li>
-          <li><a href="index.html#about" class="text-decoration-none">About Us</a></li>
-          <li><a href="index.html#faq" class="text-decoration-none">FAQ</a></li>
-          <li><a href="index.html#reviews" class="text-decoration-none">Reviews</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-12 col-lg-3 col-sm-12">
-      <div class="footerpart3 ">
-        <h5 class="fw-bold mb-3">Contact</h5>
-        <p><i class="fa-solid fa-house"></i>  Cairo, Egypt</p>
-        <p><i class="fa-solid fa-envelope"></i>  info@glowelle.com</p>
-        <p><i class="fa-solid fa-phone"></i>  +20 123 456 789</p>
-        <hr>
-        <h5 class="fw-bold mb-4">Follow Us</h5>
-        <div class="social d-flex flex-row gap-3 align-items-center">
-          <i class="fa-brands fa-facebook-f p-2 bg-white rounded-circle border border-1 fs-4"></i>
-          <i class="fa-brands fa-instagram p-2 bg-white rounded-circle border border-1 fs-4"></i>
-          <i class="fa-brands fa-tiktok p-2 bg-white rounded-circle border border-1 fs-4"></i>
-          <i class="fa-brands fa-x-twitter p-2 bg-white rounded-circle border border-1 fs-4"></i>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-lg-3 col-sm-12">
-      <div class="footerpart4">
-        <h5 class="fw-bold mb-3">We Accept</h5>
-        <div class="d-flex flex-row justify-content-around align-items-center">
-          <img src="Rawan-images/visaa.png" width="90">
-          <img src="Rawan-images/mastercardd.png" width="70">
-          <img src="Rawan-images/instapay.webp" width="70">
-          <img src="Rawan-images/meeza.png" width="70">
-          <img src="Rawan-images/cashh.png" width="70">
-        </div>
-      </div>
-    </div>
-    </div>
-    <div class=" allRightReserved text-center p-2 text-white small">
-      <b>© 2025 Glowelle. All rights reserved.</b>
-    </div>
   </div>
 
+  <div id="backToTop">
+    <button class="GoTop border-0 rounded-5 p-3 shadow-lg"><i class="fa-solid fa-arrow-up"></i> Top</button>
+  </div>
 
-  <script src="JS/bootstrap.bundle.min.js"></script>
-  <script src="js/product.js"></script>  
+  <div id="footer"></div>
+  <script src="./JS/bootstrap.bundle.min.js"></script>
+  <script src="./JS/product.js"></script>
+  <script src="./JS/utils.js"></script>
 </body>
 </html>

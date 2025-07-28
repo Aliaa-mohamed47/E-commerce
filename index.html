@@ -5,21 +5,19 @@
   <title>Home - E-Commerce</title>
   <link rel="stylesheet" href="css/all.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
-
+  <link rel="stylesheet" href="./css/header&footer.css">
   <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
-  <!-- Page: Home -->
-  <div class="header position-fixed top-0 start-0 w-100 z-3">
+    <div id="header"></div>
 
-  </div>
 
 
   <div class="main d-flex flex-row justify-content-around align-items-center gap-5 row">
     <div class="col-12 col-lg-4 col-sm-12">
       <div class="first1">
-        <img src="Rawan-images/main-pic.jpg" class=" shadow-lg rounded-end-circle img w-100">
+        <img src="./images/main-pic.jpg" class=" shadow-lg rounded-end-circle img w-100">
       </div>
     </div>
     <div class="col-12 col-lg-4 col-sm-12">
@@ -28,7 +26,7 @@
         <h3>Trendy. Elegant. Everyday style.</h3><br>
         <p class="text-center"> Modance is your go-to fashion brand for both men and women.<br>
         From timeless basics to standout pieces — we bring you effortless style that fits every moment.</p><br><br>
-        <button class="shopNow border-0 rounded-pill shadow-lg p-3 fs-5 text-white">Shop Now!</button>
+        <a href="./products.html" class="shopNow border-0 rounded-pill shadow-lg p-3 fs-5 text-white text-decoration-none">Shop Now!</a>
       </div>
     </div>
     
@@ -116,7 +114,7 @@
     </div>
   </div>
      <div class="text-center mt-5">
-        <button class="shopNow border-0 rounded-pill shadow-lg p-3 fs-5 text-white">Shop All Products</button>
+        <a href="products.html" class="shopNow text-decoration-none border-0 rounded-pill shadow-lg p-3 fs-5 text-white">Shop All Products</a>
      </div>
   </div>
 
@@ -264,64 +262,14 @@
 </div>
 
 
-<div class="footer w-100">
-    <div class="containerr d-flex flex-row justify-content-around row p-5">
-    <div class="col-12 col-lg-3 col-sm-12">
-      <div class="footerr1">
-        <img src="Rawan-images/Modance-logo.png" class="w-100">
-      </div>
-    </div>
-    <div class="col-12 col-lg-3 col-sm-12">
-      <div class="footerr2">
-        <h5 class="fw-bold mb-3">Quick Links</h5>
-        <ul>
-          <li><a href="index.html" class="text-decoration-none">Home</a></li>
-          <li><a href="index.html#shop" class="text-decoration-none">Shop</a></li>
-          <li><a href="index.html#about" class="text-decoration-none">About Us</a></li>
-          <li><a href="index.html#faq" class="text-decoration-none">FAQ</a></li>
-          <li><a href="index.html#reviews" class="text-decoration-none">Reviews</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-12 col-lg-3 col-sm-12">
-      <div class="footerr3">
-        <h5 class="fw-bold mb-3">Contact</h5>
-        <p><i class="fa-solid fa-house"></i>  Cairo, Egypt</p>
-        <p><i class="fa-solid fa-envelope"></i>  info@glowelle.com</p>
-        <p><i class="fa-solid fa-phone"></i>  +20 123 456 789</p>
-        <hr>
-        <h5 class="fw-bold mb-4">Follow Us</h5>
-        <div class="social d-flex flex-row gap-3 align-items-center">
-          <i class="fa-brands fa-facebook-f p-2 bg-white rounded-circle border border-1 fs-4"></i>
-          <i class="fa-brands fa-instagram p-2 bg-white rounded-circle border border-1 fs-4"></i>
-          <i class="fa-brands fa-tiktok p-2 bg-white rounded-circle border border-1 fs-4"></i>
-          <i class="fa-brands fa-x-twitter p-2 bg-white rounded-circle border border-1 fs-4"></i>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-lg-3 col-sm-12">
-      <div class="footerr4">
-        <h5 class="fw-bold mb-3">We Accept</h5>
-        <div class="d-flex flex-row justify-content-around align-items-center">
-          <img src="Rawan-images/visaa.png" width="90">
-          <img src="Rawan-images/mastercardd.png" width="70">
-          <img src="Rawan-images/instapay.webp" width="70">
-          <img src="Rawan-images/meeza.png" width="70">
-          <img src="Rawan-images/cashh.png" width="70">
-        </div>
-      </div>
-    </div>
-    </div>
-    <div class=" allRightReserved text-center p-2 small">
-      <b>© 2025 Glowelle. All rights reserved.</b>
-    </div>
-  </div>
 
 
-  <div id="header"></div>
 
-<script src="JS/bootstrap.bundle.min.js"></script>
-<script src="JS/product.js"></script>   
+  <div id="footer"></div>
+
+<script src="./JS/bootstrap.bundle.min.js"></script>
+<script src="./JS/product.js"></script> 
+<script src="./JS/utils.js"></script>  
 
 </body>
 </html>
