@@ -92,3 +92,26 @@ function buildNavLinks() {
     });
   }
 }
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footer').innerHTML = data;
+  })
+  .catch(error => console.error('Error loading footer:', error));
+
+
+  // go to top btn
+let BackToTop = document.getElementById("backToTop")
+BackToTop.onclick = () => {
+    window.scrollTo ({
+        top: 0,
+        behavior: "smooth",
+    })
+}
+window.onscroll = () => {
+  if (window.scrollY > 300) {
+    BackToTop.style.display = "block";
+  } else {
+    BackToTop.style.display = "none";
+  }
+};

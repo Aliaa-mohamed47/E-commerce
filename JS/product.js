@@ -1,80 +1,140 @@
-// File: products.js - Display products - Fatma & Rawan
+const params = new URLSearchParams(window.location.search);
+const productId = params.get('id');
 
-// go to top btn
-let BackToTop = document.getElementById("backToTop")
-BackToTop.onclick = () => {
-    window.scrollTo ({
-        top: 0,
-        behavior: "smooth",
+if (productId) {
+  fetch(`https://ecommerce.routemisr.com/api/v1/products/${productId}`)
+    .then(res => res.json())
+    .then(data => {
+      const product = data.data;
+      console.log(product); // للمتابعة في الكونسول
+
+      // الصورة الرئيسية
+      document.getElementById('mainImage').src = product.imageCover;
+
+      // العنوان
+      document.querySelector('.product-title').textContent = product.title;
+
+      // التقييم
+      document.querySelector('.product-rating').innerHTML =
+        `${product.ratingsAverage} <i class="fa-solid fa-star"></i> (${product.ratingsQuantity} reviews)`;
+
+      // السعر والخصم
+      const discountPriceElement = document.getElementById('discountPrice');
+      const originalPriceElement = document.getElementById('originalPrice');
+
+      discountPriceElement.textContent = `EGP ${product.priceAfterDiscount && product.priceAfterDiscount < product.price
+        ? product.priceAfterDiscount
+        : product.price}`;
+
+      if (product.priceAfterDiscount && product.priceAfterDiscount < product.price) {
+        originalPriceElement.textContent = `EGP ${product.price}`;
+        originalPriceElement.style.display = "inline";
+      } else {
+        originalPriceElement.style.display = "none";
+      }
+
+      // الوصف
+      document.querySelector('.product-description').innerHTML =
+        `<strong>Description:</strong><br> ${product.description || "No description available"}`;
+
+      // الكاتيجوري
+      document.querySelector('.product-category').innerHTML =
+        `<strong>Category:</strong> ${product.category?.name || "Unknown"}`;
+
+      // الصور الصغيرة
+      const container = document.querySelector('.small-images-container');
+      container.innerHTML = '';
+      product.images.forEach((img, idx) => {
+        const div = document.createElement('div');
+        div.className = 'smallImg rounded-4 shadow-lg border border-3 border-secondary-subtle';
+        if (idx === 0) div.classList.add('selected');
+        div.innerHTML = `<img src="${img}" class="w-100 h-100" onclick="changeMainImage(this)">`;
+        container.appendChild(div);
+      });
+
+      // ---------------------------
+      // زرار Add to Cart
+      const addToCartBtn = document.querySelector('.AddToCart');
+      const quantityInput = document.getElementById('quantityInput');
+
+      const warningMsg = document.createElement('p');
+      warningMsg.className = "text-danger mt-2 small";
+      addToCartBtn.parentElement.appendChild(warningMsg);
+
+      const successMsg = document.createElement('p');
+      successMsg.className = "text-success mt-2 small";
+      addToCartBtn.parentElement.appendChild(successMsg);
+
+      addToCartBtn.onclick = async () => {
+        warningMsg.textContent = "";
+        successMsg.textContent = "";
+
+        const token = localStorage.getItem('userToken');
+        const count = parseInt(quantityInput.value);
+
+        if (!token) {
+          warningMsg.textContent = "⚠️ You must log in before adding to cart.";
+          return;
+        }
+
+        if (count <= 0) {
+          warningMsg.textContent = "Please select a valid quantity.";
+          return;
+        }
+
+        try {
+          const res = await fetch('https://ecommerce.routemisr.com/api/v1/cart', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              token
+            },
+            body: JSON.stringify({
+              productId: product.id,
+              count: count
+            })
+          });
+          const data = await res.json();
+
+          if (res.ok) {
+            successMsg.textContent = `✅ You added ${count} item(s) to your cart.`;
+          } else {
+            warningMsg.textContent = data.message || "❌ Failed to add to cart.";
+          }
+        } catch (err) {
+          warningMsg.textContent = "❌ Error adding to cart.";
+          console.error(err);
+        }
+      };
+      // ---------------------------
+
     })
-}
-window.onscroll = () => {
-  if (window.scrollY > 300) {
-    BackToTop.style.display = "block";
-  } else {
-    BackToTop.style.display = "none";
-  }
-};
-
-
-// subscribe form validation
-const form = document.getElementById("subscribeForm");
-const emailInput = document.getElementById("emailInput");
-const emailMessage = document.getElementById("emailMessage");
-
-form.addEventListener("submit", function (e) {
-  e.preventDefault();      // prevent refresh after clicking 'submit'
-  const email = emailInput.value.trim();
-  const valid = email.includes("@") && email.includes(".com");
-  if (email == "") {
-    emailMessage.textContent = "Please enter your email.";
-    emailMessage.style.color = "red";
-  } else if (!valid) {
-    emailMessage.textContent = "Enter a valid email.";
-    emailMessage.style.color = "red";
-  } else {
-    emailMessage.textContent = "Thank you for subscribing!";
-    emailMessage.style.color = "#1ca429ff";
-    emailInput.value = "";    // ba3d ma ye3mel submit yeshel el email
-  }
-  setTimeout(() => {
-      emailMessage.textContent = "";
-    }, 4000);
-});
-
- 
-
-// --------------------------------------------------------------------------------------------------------------------------------
-// product details
-
-// quantity button
-function increaseValue() {
-  const increase = document.getElementById("quantityInput");
-  increase.value = parseInt(increase.value) + 1;
+    .catch(err => {
+      console.error("Error fetching product:", err);
+    });
+} else {
+  console.error("No product ID found in URL");
 }
 
-function decreaseValue() {
-  const decrease = document.getElementById("quantityInput");
-  if (parseInt(decrease.value) > 1) {
-    decrease.value = parseInt(decrease.value) - 1;
-  }
-}
-
-
-
-/*// changing product details pictures & border color
+// دالة تغيير الصورة الرئيسية
 function changeMainImage(clickedImg) {
   document.getElementById('mainImage').src = clickedImg.src;
-  const x = document.querySelectorAll('.smallImg');
-  x.forEach(div => div.classList.remove('selected'));
+  document.querySelectorAll('.smallImg').forEach(div => div.classList.remove('selected'));
   clickedImg.parentElement.classList.add('selected');
-}*/
+}
 
+// quantity buttons
+function increaseValue() {
+  const input = document.getElementById("quantityInput");
+  input.value = parseInt(input.value) + 1;
+}
+function decreaseValue() {
+  const input = document.getElementById("quantityInput");
+  if (parseInt(input.value) > 1) {
+    input.value = parseInt(input.value) - 1;
+  }
+}
 
-
-
-// --------------------------------------------------------------------------------------------------------------------------------
-// fetching
 
 // fetching 3 products in home page
 if (window.location.pathname.includes("index.html")) {
@@ -113,101 +173,3 @@ fetch("https://ecommerce.routemisr.com/api/v1/products")
     console.error("Error fetching products:", error);
   });
 }
-
-
-
-// displaying details of each product clicked
-if (window.location.pathname.includes("product.html")) {
-  const params = new URLSearchParams(window.location.search);
-const productId = params.get('id');
-
-if (productId) {
-  fetch(`https://ecommerce.routemisr.com/api/v1/products/${productIdd}`)
-    .then(res => res.json())
-    .then(data => {
-      const product = data.data;
-      document.getElementById('mainImage').src = product.imageCover;
-      document.querySelector('.product-title').textContent = product.title;
-        });
-}
-}
-
-
-
-
-/*const params = new URLSearchParams(window.location.search);
-const productId = params.get('id');
-
-if (productId) {
-  fetch(`https://ecommerce.routemisr.com/api/v1/products/${productId}`)
-    .then(res => res.json())
-    .then(data => {
-      const product = data.data;
-      console.log(product);
-
-      // Main image
-      document.getElementById('mainImage').src = product.imageCover;
-
-      // Title
-      document.querySelector('.product-title').textContent = product.title;
-
-      // Rating
-      document.querySelector('.product-rating').innerHTML = `
-        ${product.ratingsAverage} <i class="fa-solid fa-star"></i> (${product.ratingsQuantity} reviews)
-      `;
-
-      // Price
-      document.getElementById('discountPrice').textContent = `EGP ${product.price}`;
-      if (product.priceAfterDiscount && product.priceAfterDiscount < product.price) {
-        document.getElementById('originalPrice').textContent = `EGP ${product.price}`;
-        document.getElementById('originalPrice').style.display = "inline";
-        document.querySelector('.discount-badge').style.display = "inline-block";
-      } else {
-        document.getElementById('originalPrice').style.display = "none";
-        document.querySelector('.discount-badge').style.display = "none";
-      }
-
-      // Description
-      document.querySelector('.product-description').innerHTML = `
-        <strong>Description:</strong><br> ${product.description || "No description available"}
-      `;
-
-      // Brand (you can change 'Modance' if you want dynamic brand from `product.brand`)
-      document.querySelector('.product-brand').innerHTML = `
-        <strong>Brand:</strong> Modance
-      `;
-
-      // Category
-      let categoryText = "Unknown";
-      if (product.category && product.category.name) {
-        categoryText = product.category.name;
-      }
-      document.querySelector('.product-category').innerHTML = `
-        <strong>Category:</strong> ${categoryText}
-      `;
-
-      // Small images
-      const container = document.querySelector('.small-images-container');
-      container.innerHTML = '';
-      product.images.forEach((img, idx) => {
-        const div = document.createElement('div');
-        div.className = 'smallImg rounded-4 shadow-lg border border-3 border-secondary-subtle';
-        if (idx === 0) div.classList.add('selected');
-        div.innerHTML = `<img src="${img}" class="w-100 h-100" onclick="changeMainImage(this)">`;
-        container.appendChild(div);
-      });
-
-    })
-    .catch(err => {
-      console.error("Error fetching product:", err);
-    });
-} else {
-  console.error("No product ID found in URL");
-}
-
-// Change main image when thumbnail clicked
-function changeMainImage(clickedImg) {
-  document.getElementById('mainImage').src = clickedImg.src;
-  document.querySelectorAll('.smallImg').forEach(div => div.classList.remove('selected'));
-  clickedImg.parentElement.classList.add('selected');
-}*/
