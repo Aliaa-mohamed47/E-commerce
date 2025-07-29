@@ -3,7 +3,7 @@
     --main1: #2c558f;
     --main2: #d9cdbf;
     --lightBlue: #aec8ed;
-    --headingsFont: 'Parisienne', cursive;
+    --headingsFont: 'Playfair Display', serif;;
     --bigFont: 60px;
     --transitionFast: 0.3s ease-in-out;
     --sectionBackground: linear-gradient(to bottom, #fff 40%, var(--main2) 100%);
@@ -40,6 +40,7 @@ body{
 }
 .shopNow{
     background-color: var(--main1);
+    color: white;
     transition: var(--transitionFast);
 }
 .shopNow:hover{
