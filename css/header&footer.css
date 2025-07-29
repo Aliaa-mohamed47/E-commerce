@@ -31,6 +31,11 @@
 .footerpart4 img:hover {
     transform: scale(1.1);
 }
+@media (max-width: 768px) {
+  .footer .footerr1 img {
+    width: 200px !important;
+  }
+}
 /* header */
 .custom-navbar {
   background: var(--main1);
