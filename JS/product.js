@@ -6,19 +6,15 @@ if (productId) {
     .then(res => res.json())
     .then(data => {
       const product = data.data;
-      console.log(product); // للمتابعة في الكونسول
+      console.log(product);
 
-      // الصورة الرئيسية
       document.getElementById('mainImage').src = product.imageCover;
 
-      // العنوان
       document.querySelector('.product-title').textContent = product.title;
 
-      // التقييم
       document.querySelector('.product-rating').innerHTML =
         `${product.ratingsAverage} <i class="fa-solid fa-star"></i> (${product.ratingsQuantity} reviews)`;
 
-      // السعر والخصم
       const discountPriceElement = document.getElementById('discountPrice');
       const originalPriceElement = document.getElementById('originalPrice');
 
@@ -33,15 +29,12 @@ if (productId) {
         originalPriceElement.style.display = "none";
       }
 
-      // الوصف
       document.querySelector('.product-description').innerHTML =
         `<strong>Description:</strong><br> ${product.description || "No description available"}`;
 
-      // الكاتيجوري
       document.querySelector('.product-category').innerHTML =
         `<strong>Category:</strong> ${product.category?.name || "Unknown"}`;
 
-      // الصور الصغيرة
       const container = document.querySelector('.small-images-container');
       container.innerHTML = '';
       product.images.forEach((img, idx) => {
@@ -52,8 +45,6 @@ if (productId) {
         container.appendChild(div);
       });
 
-      // ---------------------------
-      // زرار Add to Cart
       const addToCartBtn = document.querySelector('.AddToCart');
       const quantityInput = document.getElementById('quantityInput');
 
@@ -106,7 +97,6 @@ if (productId) {
           console.error(err);
         }
       };
-      // ---------------------------
 
     })
     .catch(err => {
@@ -116,14 +106,12 @@ if (productId) {
   console.error("No product ID found in URL");
 }
 
-// دالة تغيير الصورة الرئيسية
 function changeMainImage(clickedImg) {
   document.getElementById('mainImage').src = clickedImg.src;
   document.querySelectorAll('.smallImg').forEach(div => div.classList.remove('selected'));
   clickedImg.parentElement.classList.add('selected');
 }
 
-// quantity buttons
 function increaseValue() {
   const input = document.getElementById("quantityInput");
   input.value = parseInt(input.value) + 1;

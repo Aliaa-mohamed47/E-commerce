@@ -3,12 +3,10 @@ body {
   background-color: #f2f7fb;
   font-family: 'Poppins', sans-serif;
 }
-
 h2 {
   color: #2c558f;
   font-weight: 600;
 }
-
 .order-card {
   background: #aac6dd;
   border-radius: 10px;
@@ -16,7 +14,6 @@ h2 {
   margin-bottom: 20px;
   padding: 20px;
 }
-
 .order-header {
   display: flex;
   justify-content: space-between;
@@ -25,26 +22,25 @@ h2 {
 .order-products {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px; /* فاصل بين كل منتج والتاني */
+  gap: 10px;
 }
-
 .order-product {
-  flex: 0 0 80px; /* كل عنصر ياخد نفس العرض (مثلاً 80px) */
-  height: 200px;  /* نفس الارتفاع */
-  border: 1px solid #ccc; /* خط رفيع حوالين المنتج (اختياري) */
+  flex: 0 0 80px;
+  height: 280px;
+  border: 1px solid #ccc;
   border-radius: 8px;
   padding: 5px;
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* يخلي الصورة والنص في النص عموديًا */
-  align-items: center;     /* في النص أفقيًا */
-  background-color: #fff;  /* خلفية فاتحة */
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
 }
 .order-product img {
   width: 50px;
   height: 50px;
-  object-fit: contain; /* تخلي الصورة كاملة وواضحة */
+  object-fit: contain;
   margin-bottom: 4px;
 }
 .order-product div {

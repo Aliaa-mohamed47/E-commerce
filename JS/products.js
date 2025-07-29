@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const col = document.createElement("div");
     col.className = "col-md-4 mb-4 product-card";
     col.dataset.category = prod.category?.name?.toLowerCase().includes('women') ? 'women' : 'men';
-    col.dataset.productId = prod.id; // ✅ أضفنا id هنا
+    col.dataset.productId = prod.id;
 
     col.innerHTML = `
       <div class="card h-100 shadow-sm f60">
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       filtered.forEach(card => container.appendChild(card));
 
-      initCardEvents(); // ✅ هنا بقى مش محتاجين نبعث prods، هنا بناخد من dataset
+      initCardEvents();
     });
   });
 
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardsOnPage = document.querySelectorAll('.product-card');
     cardsOnPage.forEach((card) => {
       let count = 0;
-      const productId = card.dataset.productId; // ✅ جبنا id من dataset
+      const productId = card.dataset.productId;
       const plusBtn = card.querySelector('.plus');
       const minusBtn = card.querySelector('.minus');
       const countSpan = card.querySelector('.count');
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
               token
             },
             body: JSON.stringify({
-              productId: productId, // ✅ هنا id مباشر
+              productId: productId,
               count: count
             })
           });

@@ -16,46 +16,50 @@
 <body>
   <div id="header"></div>
 
-
-<h1 class="c1">WELCOME TO MODANCE</h1>
-<h1 class="f30"> 👗🕴️ Fashion for every story 👗🕴️ </h1>
-
-<div id="loading" class="text-center my-5">
-  <div class="spinner-border text-primary" role="status">
-    <span class="visually-hidden">Loading...</span>
+  <div class="welcome-wrapper">
+    <h1 class="c1">WELCOME TO MODANCE</h1>
   </div>
-  <p>Loading products...</p>
-</div>
+  <h1 class="f30"> 👗🕴️ Fashion for every story 👗🕴️ </h1>
 
-<nav class="navbar navbar-expand-lg">
-  <div class="container">
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0 f2 ps-5 mt-5" id="category-nav">
-      <li class="nav-item">
-        <a class="nav-link filter-link active  border-3 a1" data-filter="all" href="#">All</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link filter-link a1" data-filter="women" href="#">Women</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link filter-link a1" data-filter="men" href="#">Men</a>
-      </li>
-    </ul>
+  <div id="loading" class="text-center my-5">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <p>Loading products...</p>
   </div>
-</nav>
 
-<div class="container text-center f50 shadow-lg p-3 mb-5 bg-body-tertiary rounded bg-white">
-  <div class="row" id="products-row"></div>
-</div>
+  <div class="category-wrapper">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container text-align-center">
+      <ul class="navbar-nav mb-2 mb-lg-0 f2 mt-5" id="category-nav">
+        <li class="nav-item">
+          <a class="nav-link filter-link active border-3 a1" data-filter="all" href="#">All</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link filter-link a1" data-filter="women" href="#">Women</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link filter-link a1" data-filter="men" href="#">Men</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  </div>
 
-<div id="backToTop">
-  <button class="GoTop border-0 rounded-5 p-3 shadow-lg"><i class="fa-solid fa-arrow-up"></i> Top</button>
-</div>
+
+  <div class="container text-center f50 shadow-lg p-3 mb-5 bg-body-tertiary rounded bg-white">
+    <div class="row" id="products-row"></div>
+  </div>
+
+  <div id="backToTop">
+    <button class="GoTop border-0 rounded-5 p-3 shadow-lg"><i class="fa-solid fa-arrow-up"></i> Top</button>
+  </div>
 
   <div id="footer"></div>
 
-<script src="./JS/products.js"></script>
-<script src="./JS/bootstrap.bundle.min.js"></script>
-<script src="./JS/utils.js"></script>
+  <script src="./JS/products.js"></script>
+  <script src="./JS/bootstrap.bundle.min.js"></script>
+  <script src="./JS/utils.js"></script>
 
 </body>
 </html>

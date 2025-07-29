@@ -5,43 +5,53 @@
 body{
     background-color:#f2f7fb !important;
 }
-.c1 {
-      
-      font-family: "Anton", sans-serif;
-      font-weight: 400;
-      font-style: normal;
-      font-size: 100px;
-      margin-top: 100px;
-      overflow: hidden;
-      white-space: nowrap;
-      border-right: 5px solid black;
-      width: 0;
-      animation: x 3s ease-out  forwards;
-      margin-left: 200px;
-    }
-
-    @keyframes x {
-      0% { width: 0; }
-100%{
-    width: 1000px;
-    margin-left: 300px;
-    border-right:5px transparent solid;
+.welcome-wrapper {
+  text-align: center;
 }
-    }
-
+.c1 {
+  color: var(--color) !important;
+  font-family: 'Parisienne', cursive;
+  font-weight: 275;
+  font-style: normal;
+  font-size: 75px;
+  margin-top: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 5px solid black;
+  width: 0;
+  animation: x 3s ease-out forwards;
+  display: inline-block;
+}
+@keyframes x {
+  0% { width: 0; }
+  100% {
+    width: 1000px;
+    border-right:5px transparent solid;
+  }
+}
+.category-wrapper .navbar-nav.f2 {
+  width: 100%;
+  justify-content: center !important;
+}
+.category-wrapper .container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.f2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding-left: 0 !important;
+}
 .f1{
     margin-left: 500px;
     font-size: 19px;
 }
-.f2 li{
-    padding-left: 100px;
-    position: relative;
-    left: 170px;
-    font-size: 20px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
-
+.f2 li {
+  position: static !important;
+  left: 0 !important;
 }
-
 .f2 li a:hover{
     color:var(--color) ! important;
 }
@@ -58,75 +68,62 @@ body{
   font-size: 24px !important;
   color: #2c558f !important;
   width: 90%;
-  /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important; */
   font-family: "Black Han Sans", sans-serif !important;
   font-weight: 400 !important;
   font-style: normal !important;
 }
-
 .f50 {
     margin-top: 100px;
 }
 .f50 .f60:hover{
 transform: scale(.9);
 }
-
 .f15{
-    color: rgb(160, 134, 134) !important;
-    font-size: 25px !important;
-    
+  color: rgb(160, 134, 134) !important;
+  font-size: 25px !important;  
 }
-
 .f30{
-    margin-top: 100px;
-    text-align: center;
-font-family: "WindSong", cursive;
+  margin-top: 100px;
+  text-align: center;
+  font-family: "WindSong", cursive;
   font-weight: 400;
   font-style: normal;
   font-size: 70px;
   color:oklch(28.131% 0.18513 265.028);
 }
-
 .f50 .c2{
-    width: 1000px !important;
+  width: 1000px !important;
 }
-
 .product-card {
   padding: 15px;
 }
-
 .product-card .card {
   background-color: #ffffff; 
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
   transition: transform 0.3s ease;
 }
-
 .product-card .card:hover {
   transform: scale(.9);
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
 }
-
 .product-card img {
   height: 400px;
   object-fit: contain;
   padding: 10px;
 }
-
 .product-card .card-title {
   font-size: 16px;
   font-weight: bold;
   text-align: center;
   min-height: 48px;
 }
-
 .product-card .card-text {
   font-size: 16px;
   text-align: center;
   color: #666;
   min-height: 40px;
 }
-
 .product-card .btn {
   font-size: 13px;
   padding: 6px 10px;
@@ -137,11 +134,9 @@ font-family: "WindSong", cursive;
   text-decoration: none;
   color: #5ab0ee !important;
 }
-
 .a1:hover {
   color: #2467a8 !important;
 }
-
 .a1::after {
   content: "";
   position: absolute;
@@ -152,14 +147,12 @@ font-family: "WindSong", cursive;
   background-color: #2467a8;
   transition: width 0.3s linear;
 }
-
 .a1:hover::after {
   width: 100%;
 }
-
 /*                                   media query                          */
 @media screen and (max-width: 576px) {
-   h1.c1 {
+  h1.c1 {
     font-size: 22px;
     text-align: center;
     animation: none;
@@ -168,75 +161,58 @@ font-family: "WindSong", cursive;
     border-right: none;
     white-space: normal;
   }
-
   .f30 {
     font-size: 18px;
     white-space: normal;
     padding: 0 10px;
   }
-
-  
   h1.c1 {
     font-size: 42px;
     text-align: center;
   }
-
   .f30 {
     font-size: 38px;
   }
-
   .f50 {
     font-size: 20px;
   }
-
   .f60 {
     font-size: 16px;
   }
-
   .f10 {
     font-size: 14px;
   }
-
   .f15 {
     font-size: 13px;
   }
-
   .f5 {
     font-size: 12px;
   }
-
   .navbar-nav {
     flex-direction: column;
     align-items: center;
   }
-
   .navbar-nav .nav-item {
     width: 100%;
     text-align: center;
     margin-bottom: 10px;
   }
-
   .card {
     margin-bottom: 20px;
   }
-
   .card-body {
     padding: 10px;
   }
-
   .card-img-top {
     height: 200px;
     object-fit: cover;
   }
-
   .product-card {
     padding: 10px;
   }
-
   .container {
     padding: 0 10px;
   }
-
 }
 
 @media screen and (min-width: 577px) and (max-width: 768px) {
@@ -246,33 +222,27 @@ font-family: "WindSong", cursive;
     animation: x 3s ease-out forwards;
     white-space: nowrap;
   }
-
   .f30 {
     font-size: 38px;
     padding: 0 15px;
   }
-
   .f50 { font-size: 28px; }
   .f60 { font-size: 20px; }
   .f10 { font-size: 18px; }
   .f15 { font-size: 16px; }
   .f5  { font-size: 14px; }
-
   .navbar-nav {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .navbar-nav .nav-item {
     width: 100%;
     margin-bottom: 8px;
   }
-
   .card-img-top {
     height: 300px;
     object-fit: cover;
   }
-
   .product-card { padding: 15px; }
   .container { padding: 0 20px; }
 }
@@ -283,38 +253,30 @@ font-family: "WindSong", cursive;
     margin-left: 80px;
     animation: x 3s ease-out forwards;
   }
-
   .f30 {
     font-size: 32px;
     padding: 0 20px;
   }
-
   .f50 { font-size: 30px; }
   .f60 { font-size: 22px; }
   .f10 { font-size: 20px; }
   .f15 { font-size: 18px; }
   .f5  { font-size: 16px; }
-
   .navbar-nav {
     flex-direction: row;
     justify-content: center;
   }
-
   .navbar-nav .nav-item {
     margin: 0 10px;
   }
-
   .card-img-top {
     height: 350px;
   }
-
   .product-card {
     padding: 20px;
   }
-
   .container {
     padding: 0 30px;
   }
-
 }
 

@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
           body: JSON.stringify({ email, password })
         });
         const data = await response.json();
-        console.log(data); // 👈 ضيفي السطر ده هنا
+        console.log(data);
 
         
         if (response.ok) {

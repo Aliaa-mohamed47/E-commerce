@@ -13,7 +13,7 @@ fetch("https://ecommerce.routemisr.com/api/v1/products")
   product.category.name.toLowerCase() === "women's fashion"
   );
   const selectedProducts = [...twoMenProducts, womenProduct];
-   
+
   const productCards = document.querySelectorAll(".products");
   selectedProducts.forEach((product, index) => {
   const card = productCards[index];
@@ -25,8 +25,8 @@ fetch("https://ecommerce.routemisr.com/api/v1/products")
   img.src = product.imageCover;
   title.textContent = product.title;
   price.textContent = `EGP ${product.price}`;
-   button.onclick = () => {
-     console.log(product._id);
+    button.onclick = () => {
+      console.log(product._id);
         window.location.href = `product.html?id=${product._id}`;
       };
   });

@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     showMessage('', '');
 
     try {
-      // fetch cart data
       const cartRes = await fetch('https://ecommerce.routemisr.com/api/v1/cart', { headers: { token } });
       const cartData = await cartRes.json();
       const cart = cartData.data;
@@ -51,7 +50,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
       }
 
-      // place order
       const res = await fetch(`https://ecommerce.routemisr.com/api/v1/orders/${cartId}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', token },
@@ -65,16 +63,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         showMessage('✅ Order placed successfully!', 'success');
         form.reset();
 
-        // generate order number
         let lastOrderNumber = parseInt(localStorage.getItem('lastOrderNumber')) || 0;
         let newOrderNumber = lastOrderNumber + 1;
         localStorage.setItem('lastOrderNumber', newOrderNumber);
 
-        // create new order object
         const newOrder = {
           id: newOrderNumber,
           customerName: customerName,
-          userToken: token,  // لربطه باليوزر
+          userToken: token,
           date: new Date().toLocaleString(),
           total: cart.totalCartPrice,
           status: 'Pending',
@@ -88,16 +84,13 @@ document.addEventListener('DOMContentLoaded', async () => {
           }))
         };
 
-        let userName = localStorage.getItem('userName'); // 👈 أو ممكن email لو مسجلاه
+        let userName = localStorage.getItem('userName');
         let ordersKey = `orders_${userName}`;
 
         let orders = JSON.parse(localStorage.getItem(ordersKey)) || [];
         orders.push(newOrder);
         localStorage.setItem(ordersKey, JSON.stringify(orders));
 
-
-        // ممكن تعملي تحويل لصفحة الطلبات
-        // window.location.href = 'orders.html';
       } else {
         showMessage('❌ Failed: ' + result.message, 'danger');
       }
