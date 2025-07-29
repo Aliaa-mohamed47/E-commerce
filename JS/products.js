@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <img src="${prod.imageCover}" class="card-img-top" alt="${prod.title}">
         <div class="card-body text-center">
           <h5 class="card-title f10 fa-2x fw-bold" style="color: #2c558f;">${prod.title}</h5>
-          <p class="text-muted mb-2">Price: ${prod.price} EGP</p>
+          <p class="text-muted mb-2 fw-bold">Price: ${prod.price} EGP</p>
           <div class="d-flex justify-content-center align-items-center gap-2 mb-2">
             <button class="btn btn-outline-secondary minus">➖</button>
             <span class="count">0</span>
