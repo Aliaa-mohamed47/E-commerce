@@ -26,7 +26,7 @@ body{
     font-size: var(--bigFont);
 }
 .main{
-    color: var(--main1);
+    color: #cbb8e3;
     background: var(--sectionBackground);
     margin-top: 80px;
     padding: var(--mainPadding);
