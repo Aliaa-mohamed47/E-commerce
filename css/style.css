@@ -60,6 +60,7 @@ body{
 }
 .first2 {
   animation: mainSectionRight 1s ease-in-out;
+  font-size: 25px;
 }
 
 
