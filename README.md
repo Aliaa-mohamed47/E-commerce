@@ -14,7 +14,8 @@ It includes pages like Home, Product Details, Cart, Checkout, Orders, and authen
 ---
 
 ### 📁 Project Structure
-`
+
+```
 E-commerce/
 ├── css/
 │ ├── auth/ (login, register, forget password, reset password, OTP)
@@ -48,7 +49,7 @@ E-commerce/
 ├── product.html
 ├── products.html
 └── reset-password.html
-`
+```
 ---
 
 ---
