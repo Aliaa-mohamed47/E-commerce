@@ -17,22 +17,22 @@ It includes pages like Home, Product Details, Cart, Checkout, Orders, and authen
 
 E-commerce/
 ├── css/
-│   ├── auth/ (login, register, forget password, reset password, OTP)
-│   ├── cart & checkout
-│   ├── header & footer
-│   ├── orders
-│   ├── products
-│   └── style/ (product details & home)
+│ ├── auth/ (login, register, forget password, reset password, OTP)
+│ ├── cart & checkout
+│ ├── header & footer
+│ ├── orders
+│ ├── products
+│ └── style/ (product details & home)
 │
 ├── js/
-│   ├── auth
-│   ├── cart
-│   ├── checkout
-│   ├── home
-│   ├── orders
-│   ├── product
-│   ├── products
-│   └── utils/ (header & footer)
+│ ├── auth
+│ ├── cart
+│ ├── checkout
+│ ├── home
+│ ├── orders
+│ ├── product
+│ ├── products
+│ └── utils/ (header & footer)
 │
 ├── images/
 │
@@ -48,6 +48,7 @@ E-commerce/
 ├── product.html
 ├── products.html
 └── reset-password.html
+
 ---
 
 ---
